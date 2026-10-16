@@ -30,23 +30,21 @@ adi-shakti-maa-mandir/
 ├── index.html                   # Master HTML structure
 ├── style.css                    # Devotional theme styles, responsive layouts & animations
 ├── script.js                    # Modular JS logic, configuration & data arrays
+├── bank-details.json            # Easily editable bank transfer details (NEFT / RTGS / UPI)
 ├── README.md                    # Setup, customization & deployment documentation
 ├── assets/
 │   ├── images/
-│   │   ├── temple-main.jpg      # Temple main shikhara / exterior photograph
-│   │   ├── temple-entrance.jpg  # Temple entrance & toran dwar photograph
+│   │   ├── temple-main.jpg      # Temple sanctum photograph
+│   │   ├── temple-entrance.jpg  # Temple entrance photograph
 │   │   ├── maa-darshan.jpg      # Maa Vaishno Bhavtarni holy sanctum darshan
-│   │   ├── temple-interior.jpg  # Garbhagriha & prayer hall interior
-│   │   ├── navratri.jpg         # Navratri celebrations & Akhand Jyot photograph
+│   │   ├── temple-interior.jpg  # Holy Charan Paduka & sanctum interior
+│   │   ├── navratri.jpg         # Navratri celebrations photograph
 │   │   └── gallery/
-│   │       ├── gallery-1.jpg    # Gallery photo 1
-│   │       ├── gallery-2.jpg    # Gallery photo 2
-│   │       ├── gallery-3.jpg    # Gallery photo 3
-│   │       ├── gallery-4.jpg    # Gallery photo 4
-│   │       ├── gallery-5.jpg    # Gallery photo 5
-│   │       ├── gallery-6.jpg    # Gallery photo 6
-│   │       ├── gallery-7.jpg    # Gallery photo 7
-│   │       └── gallery-8.jpg    # Gallery photo 8
+│   │       ├── gallery-1.jpg    # Photo 1: Maa Vaishno Bhavtarni Divya Darshan
+│   │       ├── gallery-2.jpg    # Photo 2: Sacred Tridevi Garbhagriha Sanctum
+│   │       └── gallery-3.jpg    # Photo 3: Holy Charan Paduka & Pushpa Alankaran
+│   ├── videos/
+│   │   └── temple-video.mp4     # Upload your temple Aarti / Darshan video here
 │   ├── donations/
 │   │   └── donation-qr.png      # Official Mandir Seva UPI QR code image
 │   └── logo/
@@ -154,24 +152,33 @@ Simply replace the image files in `assets/images/` with your actual temple photo
 - **Navratri Celebrations**: `assets/images/navratri.jpg`
 - **Gallery Images**: Add your photos into `assets/images/gallery/` and add their titles and captions inside the `TEMPLE_CONFIG.gallery` array in `script.js`.
 
-### 3. Replacing the Donation QR Code & Bank Account Details
-1. **Donation QR Code Image**:
-   - Replace `assets/donations/donation-qr.png` with your official Mandir Trust UPI QR code image.
-2. **Bank Transfer & UPI Details**:
-   - Open `script.js` and update `TEMPLE_CONFIG.donations`:
-   ```javascript
-   donations: {
-     upiId: "yourmandir@upi", // Your verified temple UPI ID
-     accountHolder: "Adi Shakti Maa Vaishno Bhavtarni Mandir Trust",
-     bankName: "State Bank of India",
-     accountNumber: "123456789012",
-     ifscCode: "SBIN0001234",
-     branchName: "Titwala Branch, Maharashtra",
-     payeeName: "Adi Shakti Maa Bhavtarni Mandir"
+### 3. Updating Bank Details & Mandir QR Code
+1. **Editing Bank Transfer Details**:
+   - Simply open `bank-details.json` in your repository root.
+   - Enter your account details between the quotes `""`:
+   ```json
+   {
+     "accountHolder": "Adi Shakti Maa Vaishno Bhavtarni Mandir Trust",
+     "bankName": "State Bank of India",
+     "accountNumber": "123456789012",
+     "ifscCode": "SBIN0001234",
+     "branchName": "Titwala Branch, Maharashtra",
+     "upiId": "adishaktimandir@upi",
+     "payeeName": "Adi Shakti Maa Bhavtarni Mandir"
    }
    ```
+   - Commit and save! The website automatically loads and displays these details.
 
-### 4. Updating Temple Address & Google Maps Location
+2. **Donation QR Code Image**:
+   - Replace `assets/donations/donation-qr.png` with your official Mandir Trust UPI QR code image.
+
+### 4. Uploading Mandir Video Darshan
+Upload your temple video file into the `assets/videos/` folder with this exact filename:
+- **File Reference**: `assets/videos/temple-video.mp4`
+- **Format**: MP4 (H.264 / AAC)
+- The video player will immediately stream your video on the live site!
+
+### 5. Updating Temple Address & Google Maps Location
 Open `script.js` and update `TEMPLE_CONFIG.maps`:
 ```javascript
 maps: {
@@ -181,7 +188,7 @@ maps: {
 }
 ```
 
-### 5. Adding or Editing Festivals and Events
+### 6. Adding or Editing Festivals and Events
 Open `script.js` and scroll to `TEMPLE_CONFIG.festivals`. Add or edit items directly:
 ```javascript
 {
