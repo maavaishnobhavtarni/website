@@ -35,7 +35,7 @@ const TEMPLE_CONFIG = {
   // 1.2 Donation Details (NEFT / RTGS / IMPS & UPI)
   // Edit here or in bank-details.json
   donations: {
-    upiId: "", // Kept blank for now - edit in bank-details.json
+    upiId: "khushibijal08-2@okaxis", // Kept blank for now - edit in bank-details.json
     qrImagePath: "./assets/donations/donation-qr.png",
     accountHolder: "",
     bankName: "",
