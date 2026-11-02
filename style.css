@@ -281,23 +281,31 @@ ul, ol {
 }
 
 .brand-emblem {
-  width: 52px;
-  height: 52px;
+  width: 58px;
+  height: 58px;
   border-radius: var(--radius-full);
-  border: 2px solid var(--color-gold-primary);
-  background: var(--color-maroon-darkest);
+  border: 2.5px solid var(--color-gold-light);
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.55), 0 2px 10px rgba(0, 0, 0, 0.45);
   overflow: hidden;
   flex-shrink: 0;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.brand:hover .brand-emblem {
+  transform: scale(1.06);
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.8), 0 4px 14px rgba(0, 0, 0, 0.5);
+  border-color: #FFFFFF;
 }
 
 .brand-emblem img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  display: block;
 }
 
 .brand-text {
@@ -441,12 +449,12 @@ ul, ol {
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
-  min-height: 85vh;
+  min-height: 68vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 100px 0 80px 0;
+  padding: 72px 0 54px;
   background-color: var(--color-maroon-darkest);
   overflow: hidden;
 }
@@ -527,17 +535,25 @@ ul, ol {
 .hero-photo-indicator {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: rgba(18, 1, 4, 0.85);
   border: 1px solid var(--color-gold-primary);
   color: var(--color-gold-light);
-  padding: 5px 18px;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 8px 14px;
   border-radius: var(--radius-full);
-  font-size: 0.84rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.2px;
   margin-bottom: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.hero-photo-indicator #hero-photo-name {
+  white-space: nowrap;
 }
 
 /* Hero 3 Dots Navigation */
@@ -546,7 +562,7 @@ ul, ol {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .hero-dot {
@@ -597,18 +613,36 @@ ul, ol {
 .hero-sacred-chant {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 9px;
   background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(91, 14, 30, 0.5));
   border: 1px solid var(--color-gold-primary);
   color: var(--color-gold-light);
-  padding: 8px 24px;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 8px 14px;
   border-radius: var(--radius-full);
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 24px;
+  letter-spacing: 0.2px;
+  margin-bottom: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   animation: pulse-glow 3s infinite ease-in-out;
+}
+
+.hero-sacred-chant span:nth-child(2) {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .hero-photo-indicator,
+  .hero-sacred-chant {
+    gap: 6px;
+    padding: 8px 10px;
+    font-size: clamp(0.7rem, 3.1vw, 0.88rem);
+    letter-spacing: 0;
+  }
 }
 
 @keyframes pulse-glow {
@@ -622,7 +656,7 @@ ul, ol {
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-size: clamp(2.1rem, 5vw, 3.45rem);
   color: #FFFFFF;
   line-height: 1.22;
   margin-bottom: 12px;
@@ -647,7 +681,9 @@ ul, ol {
   border: 1px solid rgba(212, 175, 55, 0.4);
   border-left: 4px solid var(--color-gold-primary);
   border-right: 4px solid var(--color-gold-primary);
-  padding: 22px 28px;
+  max-width: 760px;
+  margin: 0 auto 22px;
+  padding: 15px 22px;
   border-radius: var(--radius-md);
   margin-bottom: 34px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
@@ -658,7 +694,11 @@ ul, ol {
   font-size: clamp(1.05rem, 2vw, 1.25rem);
   color: var(--color-ivory-warm);
   font-style: italic;
-  line-height: 1.8;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 /* Call To Action Buttons */
@@ -668,7 +708,7 @@ ul, ol {
   justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .btn {
@@ -723,6 +763,19 @@ ul, ol {
   transform: translateY(-2px);
 }
 
+/* Keep the UPI action label readable on its light donation card. */
+#btn-pay-upi {
+  color: var(--color-maroon-primary);
+  border-color: var(--color-gold-deep);
+}
+
+#btn-pay-upi:hover,
+#btn-pay-upi:focus-visible {
+  background: var(--color-gold-light);
+  color: var(--color-maroon-darkest);
+  border-color: var(--color-gold-deep);
+}
+
 /* Hero Quick Status Bar */
 .hero-quick-bar {
   display: inline-flex;
@@ -771,8 +824,24 @@ ul, ol {
   position: relative;
 }
 
+/* The home Darshan panel uses a light surface to break up the dark hero. */
+.home-live-darshan {
+  padding: 38px 0 42px;
+  background: linear-gradient(180deg, #fffaf0 0%, var(--color-ivory-bg) 100%);
+  color: var(--color-text-dark);
+  border-top: 1px solid rgba(91, 14, 30, .1);
+}
+
+.home-live-darshan .section-header { margin-bottom: 18px; }
+.home-live-darshan .section-title { color: var(--color-maroon-primary); }
+.home-live-darshan .section-subtitle { color: var(--color-text-muted); }
+.home-live-darshan .stream-config-note { color: var(--color-text-muted); }
+.home-live-darshan .section-title { margin-bottom: 8px; font-size: clamp(1.65rem, 3vw, 2.25rem); }
+.home-live-darshan .lotus-divider { margin: 5px auto 10px; }
+.home-live-darshan .section-subtitle { font-size: .95rem; line-height: 1.5; }
+
 .darshan-frame-container {
-  max-width: 960px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -781,24 +850,47 @@ ul, ol {
   position: relative;
   background: var(--color-maroon-darkest);
   border-radius: var(--radius-lg);
-  padding: 18px;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.25);
-  border: 3px solid var(--color-gold-primary);
-  outline: 1px solid rgba(243, 206, 99, 0.4);
-  outline-offset: -8px;
+  padding: 8px;
+  box-shadow: 0 12px 30px rgba(54, 20, 12, 0.16);
+  border: 1px solid rgba(212, 175, 55, .8);
 }
 
 /* Arch Toran Ornament at Frame Top */
 .temple-gold-frame::before {
   content: "";
   position: absolute;
-  top: -12px;
+  top: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 24px;
+  width: 64px;
+  height: 18px;
   background: var(--color-gold-primary);
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.home-live-darshan .darshan-action-bar {
+  margin-top: 10px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  justify-content: center;
+}
+
+.home-live-darshan .stream-actions { justify-content: center; }
+.home-live-darshan .stream-actions .btn { padding: 10px 18px; }
+.home-live-darshan .btn-gold:hover {
+  background: linear-gradient(135deg, var(--color-gold-primary), #b9891d);
+  color: var(--color-maroon-darkest);
+}
+.home-live-darshan .btn-outline-gold {
+  background: rgba(91, 14, 30, .04);
+  color: var(--color-maroon-primary);
+  border-color: var(--color-gold-deep);
+}
+.home-live-darshan .btn-outline-gold:hover {
+  background: rgba(212, 175, 55, .14);
+  color: var(--color-maroon-darkest);
 }
 
 .video-responsive-wrapper {
@@ -808,6 +900,12 @@ ul, ol {
   border-radius: var(--radius-md);
   overflow: hidden;
   background: #000;
+}
+
+/* Offline information needs natural height; only actual video keeps 16:9. */
+.video-responsive-wrapper.is-offline {
+  aspect-ratio: auto;
+  height: auto;
 }
 
 .video-responsive-wrapper iframe {
@@ -836,6 +934,16 @@ ul, ol {
   color: var(--color-ivory-warm);
 }
 
+.video-responsive-wrapper.is-offline .stream-offline-card {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  min-height: clamp(330px, 38vw, 420px);
+  box-sizing: border-box;
+  gap: 0;
+}
+
 .offline-icon-wrapper {
   width: 80px;
   height: 80px;
@@ -858,9 +966,11 @@ ul, ol {
 
 .offline-title {
   font-family: var(--font-heading);
-  font-size: 1.55rem;
+  font-size: clamp(1.15rem, 2.5vw, 1.55rem);
   color: var(--color-gold-light);
   margin-bottom: 12px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
 }
 
 .offline-desc {
@@ -869,6 +979,7 @@ ul, ol {
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
   margin-bottom: 20px;
+  overflow-wrap: anywhere;
 }
 
 .aarti-schedule-pills {
@@ -886,6 +997,15 @@ ul, ol {
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   color: var(--color-gold-pale);
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.video-responsive-wrapper.is-offline .stream-offline-card > .btn {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
 }
 
 /* Darshan Action Bar below video */
@@ -1354,7 +1474,7 @@ ul, ol {
 
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
   gap: 30px;
 }
 
@@ -2771,9 +2891,10 @@ ul, ol {
   .nav-menu {
     position: fixed;
     top: var(--header-height);
-    right: -100%;
-    width: 280px;
+    right: 0;
+    width: min(320px, 88vw);
     height: calc(100vh - var(--header-height));
+    height: calc(100dvh - var(--header-height));
     background: var(--color-maroon-darkest);
     border-left: 2px solid var(--color-gold-primary);
     flex-direction: column;
@@ -2781,12 +2902,19 @@ ul, ol {
     padding: 30px 24px;
     gap: 16px;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-    transition: right var(--transition-smooth);
     overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth), visibility var(--transition-smooth);
   }
 
   .nav-menu.open {
-    right: 0;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
   }
 
   .nav-link {
@@ -2824,9 +2952,12 @@ ul, ol {
   }
 
   .hero-section {
-    padding: 60px 0 60px 0;
+    padding: 44px 0 36px;
     min-height: auto;
   }
+
+  .hero-quote-box { padding: 13px 16px; margin-bottom: 18px; }
+  .hero-quote { font-size: 1rem; line-height: 1.5; }
 
   .hero-cta-group {
     flex-direction: column;
@@ -2865,9 +2996,56 @@ ul, ol {
   .stream-actions .btn {
     width: 100%;
   }
+
+  .video-responsive-wrapper.is-offline .stream-offline-card {
+    min-height: 0;
+    padding: 24px 18px;
+  }
+
+  .offline-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+  }
+
+  .offline-icon-wrapper svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .offline-title {
+    margin-bottom: 8px;
+  }
+
+  .offline-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .aarti-schedule-pills {
+    width: 100%;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .aarti-pill {
+    flex: 1 1 180px;
+    padding: 7px 10px;
+    line-height: 1.4;
+  }
+
+  .video-responsive-wrapper.is-offline .stream-offline-card > .btn {
+    width: fit-content;
+    padding: 10px 16px;
+  }
 }
 
 @media (max-width: 480px) {
+  .brand-emblem {
+    width: 44px;
+    height: 44px;
+  }
   .brand-name-english {
     display: none;
   }

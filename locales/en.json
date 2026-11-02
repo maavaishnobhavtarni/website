@@ -8,7 +8,9 @@
     "gallery": "Photo Gallery",
     "donations": "Donations",
     "contact": "Contact & Directions",
-    "video": "Mandir Video"
+    "video": "Mandir Video",
+    "skipToMain": "Skip to main content",
+    "brandEnglish": "Adi Shakti Maa Bhavtarni • Titwala"
   },
   "hero": {
     "chant": "जय माता दी! | Jai Mata Di!",
@@ -17,7 +19,8 @@
     "quote": "“Welcome to the sacred abode of Maa Vaishno Bhavtarni, a place of faith, devotion, peace, and divine blessings. May Maa guide every step of your journey and fill your life with strength, hope, and positivity.”",
     "btnLiveDarshan": "Watch Live Darshan",
     "btnExplore": "Explore the Temple",
-    "btnDonate": "Donate to the Mandir"
+    "btnDonate": "Donate to the Mandir",
+    "photoTitle1": "1/3: Maa Vaishno Bhavtarni Divya Darshan"
   },
   "status": {
     "badgeOpen": "Temple Open for Darshan",
@@ -161,7 +164,10 @@
     "navratri": "Navratri: 7:00 AM – 11:00 PM",
     "language": "Select Language",
     "rights": "All Rights Reserved. Dedicated with love and devotion to Maa Vaishno Bhavtarni.",
-    "backToTop": "Back to Top"
+    "backToTop": "Back to Top",
+    "sanctuaryText": "A sanctuary dedicated to the Divine Mother, inspiring faith, devotion, and community welfare.",
+    "contributeText": "Contribute to Mandir Seva, Bhandara, and festival celebrations via the",
+    "donationsLink": "Donations Section"
   },
   "video": {
     "badge": "Sacred Video Darshan",
@@ -174,5 +180,297 @@
     "btnFullscreen": "Fullscreen",
     "fallbackTitle": "Temple Video Stream",
     "fallbackDesc": "Upload your official temple video file named temple-video.mp4 into the assets/videos/ folder in your GitHub repository to stream directly here."
+  },
+  "festivalEvents": {
+    "kartik-purnima-deepotsav": {
+      "name": "Kartik Purnima Mahapooja & 1008 Deepotsav",
+      "badge": "Upcoming Grand Deepotsav",
+      "date": "Kartik Shukla Purnima (Dev Diwali 2026)",
+      "timings": "6:00 PM – 10:30 PM (Maha Deepotsav at 7:00 PM)",
+      "description": "Auspicious Dev Diwali celebrations featuring special Shringar of Maa Vaishno Bhavtarni, 1008 pure cow ghee earthen lamps illumination, Maha Aarti, and distribution of Kheer Prasad."
+    },
+    "divya-mata-ki-chowki": {
+      "name": "Divya Mata Ki Chowki & Akhand Bhajan Sandhya",
+      "badge": "Special Chowki",
+      "date": "Upcoming Saturday Evening",
+      "timings": "7:30 PM – 11:30 PM",
+      "description": "Soul-stirring devotional bhajans by renowned bhajan mandalis, Akhand Jyot Darshan, floral offerings at Maa's lotus feet, Ardaas prayer, and 56 Bhog Mahaprasad."
+    },
+    "magh-gupt-navratri": {
+      "name": "Magha Gupt Navratri Mahotsav",
+      "badge": "Sadhana Utsav",
+      "date": "Magha Shukla Pratipada – Navami",
+      "timings": "7:00 AM – 10:00 PM Daily",
+      "description": "Sacred period for internal spiritual sadhana, Durga Saptashati parayan, Hawan, and special evening aartis seeking divine protection and strength."
+    },
+    "maha-shivratri": {
+      "name": "Maha Shivratri Mahotsav & Akhand Rudrabhishek",
+      "badge": "Maha Shivratri Parv",
+      "date": "Phalguna Krishna Chaturdashi",
+      "timings": "All-Night 4-Prahar Pujan (6:00 AM – Next Morning 6:00 AM)",
+      "description": "Auspicious Shiva-Shakti union celebration featuring continuous Vedic Rudrabhishek, 1008 Bilvapatra archana, milk & honey panchamrit abhishek, and devotional Shiv-Durga aarti."
+    },
+    "temple-sthapna": {
+      "name": "Annual Mandir Sthapna Diwas & Patotsav",
+      "badge": "Mandir Foundation Day",
+      "date": "Annual Foundation Anniversary",
+      "timings": "8:00 AM – 10:00 PM (Maha Bhandara at 1:00 PM)",
+      "description": "Commemorating the holy Pran Pratishtha of Adi Shakti Maa Vaishno Bhavtarni with 108 Kalash Pujan, Maha Yagya, Flag hoisting (Dhwajarohan), and Community Mahaprasad for all devotees."
+    },
+    "hanuman-jayanti-sundarkand": {
+      "name": "Hanuman Jayanti & Sangeetmay Sundarkand Path",
+      "badge": "Sundarkand Mahotsav",
+      "date": "Chaitra Shukla Purnima (Hanuman Janmotsav)",
+      "timings": "4:30 PM – 9:30 PM (Maha Aarti at 8:00 PM)",
+      "description": "Celebration of Shri Hanuman Janmotsav with musical recitation of Shri Sundarkand, sacred Sindoor chola offering, 108 Hanuman Chalisa chanting, and Boondi Mahaprasad distribution."
+    },
+    "chaitra-navratri": {
+      "name": "Chaitra Navratri Mahotsav & Ram Navami",
+      "badge": "Vasant Navratri",
+      "date": "Chaitra Shukla Pratipada – Navami (Spring)",
+      "timings": "7:00 AM – 11:00 PM Extended Darshan",
+      "description": "Nine sacred days of devotion featuring Ghatasthapana, Akhand Jyot, daily Chandi Path, special floral shringar of Maa Bhavtarni, and grand Kanya Pujan on Ram Navami."
+    },
+    "weekly-sankirtan": {
+      "name": "Weekly Tuesday & Saturday Maa Ki Aarti & Kirtan",
+      "badge": "Regular Devotional Seva",
+      "date": "Every Tuesday & Saturday Evening",
+      "timings": "7:00 PM – 8:30 PM",
+      "description": "Weekly community devotional gathering where devotees join in traditional dholak, chimta, and harmonium accompanied bhajan kirtan followed by Halwa and Chana prasad."
+    },
+    "vasant-panchami": {
+      "name": "Vasant Panchami & Saraswati Devi Avahan",
+      "badge": "Saraswati Aradhana",
+      "date": "Magha Shukla Panchami (Spring Arrival)",
+      "timings": "7:30 AM – 1:00 PM & 4:30 PM – 8:30 PM",
+      "description": "Welcoming the auspicious spring season with yellow floral shringar of Maa Vaishno, Saraswati Pujan, book and pen blessings for students, and sweet saffron Kesari prasad."
+    },
+    "guru-purnima-paduka": {
+      "name": "Guru Purnima & Sacred Charan Paduka Archana",
+      "badge": "Charan Paduka Seva",
+      "date": "Ashadha Shukla Purnima (Guru Purnima)",
+      "timings": "8:00 AM – 1:00 PM & 5:00 PM – 9:00 PM",
+      "description": "Special day of gratitude dedicated to the divine lineage and Charan Paduka worship. Devotees offer Panchamrit snan, sandalwood paste, and fragrant flower garlands at Maa's holy lotus feet."
+    },
+    "sharad-purnima-kheer": {
+      "name": "Kojagiri (Sharad) Purnima Amrit Kheer Utsav",
+      "badge": "Kojagiri Amrit Utsav",
+      "date": "Ashwin Shukla Purnima (Midnight Full Moon)",
+      "timings": "7:00 PM – 12:30 AM Midnight",
+      "description": "Sacred Kojagiri night celebrations with moonlight bhajan sandhya, Lakshmi-Vaishno pujan, and distribution of saffron-cardamom Amrit Kheer kept under the nectar-raining full moon."
+    },
+    "sharad-navratri": {
+      "name": "Sharad Navratri Mahotsav",
+      "badge": "Sharad Utsav",
+      "date": "Ashwin Shukla Pratipada – Navami (Autumn)",
+      "timings": "7:00 AM – 11:00 PM Extended Hours",
+      "description": "The most magnificent autumn festival at the temple with 9 days of royal poshak shringar, Tridevi Mahapooja, Dandiya Raas, and thousands of devotees seeking Maa's blessings."
+    },
+    "vijayadashami": {
+      "name": "Vijayadashami / Dussehra Utsav",
+      "badge": "Victory of Dharma",
+      "date": "Ashwin Shukla Dashami",
+      "timings": "Special Darshan: 7:00 AM – 10:30 PM",
+      "description": "Commemorating the victory of Maa Durga over Mahishasura and righteousness over unrighteousness. Featuring Shastra Pujan, Aparajita Pujan, and distribution of holy Prasad."
+    }
+  },
+  "pageText": {
+    "Skip to main content": "Skip to main content",
+    "Temple Open for Darshan • Daily 7:00 AM – 2:00 PM & 4:00 PM – 9:00 PM": "Temple Open for Darshan • Daily 7:00 AM – 2:00 PM & 4:00 PM – 9:00 PM",
+    "🪔 Daily Aarti: 7:30 AM & 7:00 PM • ✨ Dev Diwali 1008 Deepotsav": "🪔 Daily Aarti: 7:30 AM & 7:00 PM • ✨ Dev Diwali 1008 Deepotsav",
+    "Upcoming Events ›": "Upcoming Events ›",
+    "🏠 Home": "🏠 Home",
+    "Upcoming Events": "Upcoming Events",
+    "Festivals": "Festivals",
+    "✨ Auspicious Highlights": "✨ Auspicious Highlights",
+    "Upcoming Mandir Events & Mahotsav": "Upcoming Mandir Events & Mahotsav",
+    "Upcoming sacred gatherings, festival dates, and special worship schedules read directly from our official schedule data.": "Upcoming sacred gatherings, festival dates, and special worship schedules read directly from our official schedule data.",
+    "Annual Celebrations": "Annual Celebrations",
+    "All Festivals & Special Pujas": "All Festivals & Special Pujas",
+    "Filter and explore the full calendar of annual Mahotsavs, Chowkis, and ritual pujas celebrated at Titwala Dham.": "Filter and explore the full calendar of annual Mahotsavs, Chowkis, and ritual pujas celebrated at Titwala Dham.",
+    "New festival dates will be announced soon. Please check back or contact the Mandir office.": "New festival dates will be announced soon. Please check back or contact the Mandir office.",
+    "Read Complete Temple History": "Read Complete Temple History",
+    "Pavitra Charan Paduka Darshan": "Pavitra Charan Paduka Darshan",
+    "View in Gallery": "View in Gallery",
+    "Daily Aarti Timings": "Daily Aarti Timings",
+    "Looking for upcoming festival dates, Navratri celebrations, and Chowki schedules?": "Looking for upcoming festival dates, Navratri celebrations, and Chowki schedules?",
+    "🌸 Explore Festivals & Upcoming Events": "🌸 Explore Festivals & Upcoming Events",
+    "🕉️ Pilgrim Guidelines": "🕉️ Pilgrim Guidelines",
+    "Sacred Rules & Darshan Etiquette": "Sacred Rules & Darshan Etiquette"
+  },
+  "announcement": {
+    "status": "Temple Open for Darshan • Daily 7:00 AM – 2:00 PM & 4:00 PM – 9:00 PM",
+    "aarti": "🪔 Daily Aarti: 7:30 AM & 7:00 PM • ✨ Dev Diwali 1008 Deepotsav",
+    "upcoming": "Upcoming Events ›"
+  },
+  "breadcrumb": {
+    "home": "🏠 Home",
+    "about": "About Temple",
+    "darshan": "Darshan & Timings",
+    "festivals": "Festivals & Events",
+    "gallery": "Photo Gallery",
+    "donations": "Donations & Seva",
+    "contact": "Contact & Directions"
+  },
+  "stats": {
+    "darshanValue": "7 AM – 9 PM",
+    "darshanLabel": "Daily Darshan Hours",
+    "aartiValue": "7:30 AM & 7 PM",
+    "aartiLabel": "Daily Aarti Timings",
+    "navratriValue": "Navratri",
+    "navratriLabel": "Grand Mahotsav",
+    "locationValue": "Titwala",
+    "locationLabel": "Thane, Maharashtra"
+  },
+  "home": {
+    "darshanTimingsBtn": "Darshan Timings",
+    "festivalsBtn": "Festivals & Events",
+    "liveDarshanBadge": "🔴 Live Darshan",
+    "liveDarshanTitle": "Live YouTube Darshan",
+    "liveDarshanSubtitle": "Receive Maa Vaishno Bhavtarni's divine blessings and daily Aarti live on YouTube from wherever you are.",
+    "watchYoutube": "Watch on YouTube",
+    "viewFullDarshan": "View Full Darshan Page & Timings",
+    "timingsBadge": "⏰ Sacred Schedule",
+    "timingsTitle": "Daily Mandir Darshan Timings",
+    "timingsSubtitle": "Plan your pilgrimage according to the daily Darshan and Aarti hours of Maa's Darbar.",
+    "morningTitle": "Morning Darshan",
+    "morningDesc": "Mangala Darshan, Daily Pujas, and Morning Aarti at 7:30 AM.",
+    "breakTitle": "Afternoon Break",
+    "breakDesc": "Sanctum closed for Bhog offering and विश्राम (rest).",
+    "eveningTitle": "Evening Darshan",
+    "eveningDesc": "Deepotsav, Sandhya Aarti at 7:00 PM, and Shayan Darshan.",
+    "viewNavratriTimings": "View Navratri & Detailed Timings",
+    "welcomeBadge": "📍 Titwala Dham • Kalyan, Maharashtra",
+    "abodeBadge": "🕉️ Sacred Abode",
+    "aboutTitle": "About Adi Shakti Maa Vaishno Bhavtarni Mandir",
+    "aboutP1": "Situated in the sacred town of Titwala, Maharashtra, Adi Shakti Maa Vaishno Bhavtarni Mandir is a sanctified shrine dedicated to the Divine Mother. Devotees visit this sacred abode to seek Maa's eternal blessings, strength, and inner spiritual peace.",
+    "aboutP2": "Inspired by the eternal power of Adi Shakti, the Mandir enshrines the holy Tridevi (Maa Mahakali, Maa Mahalakshmi, Maa Mahasaraswati) alongside the sacred Charan Paduka, uniting thousands of devotees through daily worship, Vedic rituals, and festival celebrations.",
+    "feat1": "Akhand Jyot Darshan",
+    "feat2": "Tridevi Garbhagriha",
+    "feat3": "Pavitra Charan Paduka",
+    "feat4": "Daily Prasad Distribution",
+    "readHistory": "Read Complete Temple History",
+    "galleryBadge": "📸 Photo Gallery",
+    "galleryTitle": "Divine Glimpses of Maa's Darbar",
+    "gallerySubtitle": "Glimpses of the sanctum sanctorum, golden shringar, and holy Charan Paduka.",
+    "galleryCard1": "Maa Vaishno Bhavtarni Divya Darshan",
+    "galleryCard2": "Sacred Tridevi Garbhagriha",
+    "galleryCard3": "Pavitra Charan Paduka & Pushpa Alankaran",
+    "exploreGallery": "Explore Full Photo Gallery & Mandir Video",
+    "sevaBadge": "💛 Devotional Seva",
+    "sevaTitle": "Support Mandir Seva & Prasad Bhandara",
+    "sevaDesc": "Contribute towards daily worship, flower shringar, Navratri Mahotsav arrangements, and ongoing temple development. Every donation directly supports the holy abode.",
+    "viewDonations": "View Bank Details & UPI",
+    "shlokaMeaning": "“O Divine Mother, the auspiciousness of all that is auspicious, the fulfiller of every blessing, the protector of the devoted — we bow to You with deepest reverence.”",
+    "quickUpiTitle": "Quick UPI Offering",
+    "copyUpi": "Copy UPI ID",
+    "pilgrimBadge": "📍 Pilgrimage Guide",
+    "pilgrimTitle": "Visit the Mandir in Titwala",
+    "pilgrimSubtitle": "Located conveniently near Titwala Railway Station on the Central Railway route.",
+    "templeAddressTitle": "Temple Address",
+    "templeAddress": "Adi Shakti Maa Vaishno Bhavtarni Mandir, Titwala, Taluka Kalyan, District Thane, Maharashtra - 421605, India",
+    "transportTitle": "Pilgrim Transport:",
+    "transportDesc": "Titwala is accessible from Mumbai CST / Thane via Central Railway suburban trains. Auto-rickshaws are readily available from Titwala railway station to the temple.",
+    "getDirectionsBtn": "Get Directions on Google Maps",
+    "viewContactDetails": "View Full Contact & Map Details",
+    "sevaBoxDesc": "Your generous contribution directly supports the daily worship, flower shringar, Prasad bhandara, and festival arrangements of Maa's Darbar. Every donation is an offering of faith and seva.",
+    "viewBankQrBtn": "View Bank & QR Details",
+    "donateUpiBtn": "Donate via UPI",
+    "heroTimings": "• 7:00 AM – 2:00 PM | 4:00 PM – 9:00 PM",
+    "quickTimingsHoursMorning": "7:00 AM – 2:00 PM",
+    "quickTimingsHoursBreak": "2:00 PM – 4:00 PM",
+    "quickTimingsHoursEvening": "4:00 PM – 9:00 PM",
+    "upiIdLabel": "UPI ID:",
+    "shloka": "॥ ॐ सर्वमंगल मांगल्ये शिवे सर्वार्थ साधिके । शरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते ॥"
+  },
+  "guidelines": {
+    "badge": "🕉️ Pilgrim Guidelines",
+    "title": "Sacred Rules & Darshan Etiquette",
+    "subtitle": "Please adhere to these devotional guidelines during your pilgrimage to preserve the sanctity of Maa's Darbar.",
+    "item1Title": "Aarti Participation",
+    "item1Desc": "Devotees are welcome to participate in Morning Aarti (7:30 AM) and Sandhya Aarti (7:00 PM). Please maintain silence and sanctity during prayers.",
+    "item2Title": "Footwear Stand",
+    "item2Desc": "Please deposit footwear at the designated shoe stand near the temple entrance before entering the sacred sanctum.",
+    "item3Title": "Offerings & Prasad",
+    "item3Desc": "Fresh flowers, chunri, coconut, and satvik sweets can be offered to Maa. Sacred Prasad is distributed daily after Aarti.",
+    "item4Title": "Photography Guidelines",
+    "item4Desc": "Photography is permitted in the temple courtyard. Devotees are kindly requested to maintain sanctity and refrain from flash photography in the sanctum."
+  },
+  "aboutPage": {
+    "heroBadge": "🕌 Sacred Heritage",
+    "heroTitle": "About the Temple",
+    "heroSubtitle": "Learn about the sacred origin, divine history, and spiritual pillars of Adi Shakti Maa Vaishno Bhavtarni Mandir in Titwala, Maharashtra.",
+    "padukaTitle": "Pavitra Charan Paduka Darshan",
+    "padukaDesc": "The sacred silver Charan Paduka (Holy Lotus Feet) of the Divine Mothers, divinely adorned with fresh marigolds, fragrant roses, and golden crowns, showering blessings of courage, peace, and abundance on all visiting devotees.",
+    "viewInGallery": "View in Gallery",
+    "contributeText": "Contribute to Mandir Seva via the",
+    "donationsLink": "Donations Section",
+    "charanBadge": "श्री चरण कमल दर्शन",
+    "locationBadge": "Titwala, Maharashtra, India"
+  },
+  "darshanPage": {
+    "heroBadge": "🔴 Live Darshan & Daily Schedule",
+    "heroTitle": "Live Darshan & Darshan Timings",
+    "heroSubtitle": "Experience the live Aarti broadcast of Maa Vaishno Bhavtarni and plan your sacred visit with our verified daily mandir schedule.",
+    "officialBroadcast": "Official YouTube Darshan Broadcast",
+    "navratriSpecial": "Special",
+    "navratriContinuous": "Continuous Darshan for all devotees during Chaitra & Sharad Navratri Mahotsav.",
+    "lookingForFestivals": "Looking for upcoming festival dates, Navratri celebrations, and Chowki schedules?",
+    "exploreFestivalsBtn": "🌸 Explore Festivals & Upcoming Events",
+    "aartiDesc": "Devotees are welcome to participate in Morning Aarti (7:30 AM) and Sandhya Aarti (7:00 PM). Please arrive 15 minutes prior.",
+    "footwearDesc": "Please deposit footwear at the designated shoe stand near the temple entrance before entering the sacred sanctum.",
+    "offeringsDesc": "Fresh flowers, chunri, coconut, and satvik sweets can be offered to Maa. Sacred Prasad is distributed after every Aarti."
+  },
+  "festivalsPage": {
+    "heroBadge": "🌸 Sacred Celebrations",
+    "heroTitle": "Festivals & Upcoming Events",
+    "heroSubtitle": "Experience the divine joy of Navratri Mahotsav, sacred Chowkis, devotional Kirtans, and Vedic celebrations dedicated to Maa Vaishno Bhavtarni.",
+    "tabUpcoming": "Upcoming Events",
+    "tabFestivals": "Festivals",
+    "upcomingBadge": "✨ Auspicious Highlights",
+    "upcomingTitle": "Upcoming Mandir Events & Mahotsav",
+    "upcomingSubtitle": "Upcoming sacred gatherings, festival dates, and special worship schedules read directly from our official schedule data.",
+    "annualBadge": "Annual Celebrations",
+    "annualTitle": "All Festivals & Special Pujas",
+    "annualSubtitle": "Filter and explore the full calendar of annual Mahotsavs, Chowkis, and ritual pujas celebrated at Titwala Dham."
+  },
+  "galleryPage": {
+    "heroBadge": "📸 Divine Glimpses",
+    "tabSanctum": "Tridevi Sanctum",
+    "tabPaduka": "Charan Paduka",
+    "videoTag": "🕉️ Maa Vaishno Bhavtarni Darshan",
+    "slideCategoryDarshan": "Maa Darshan",
+    "slideCategorySanctum": "Tridevi Sanctum",
+    "slideCategoryPaduka": "Charan Paduka",
+    "tabDarshan": "Maa Darshan",
+    "slideTitle1": "Maa Vaishno Bhavtarni Divya Darshan",
+    "slideDesc1": "Divine Darshan of Maa Vaishno Bhavtarni in royal poshak with Simhavahini roop and celestial mountain backdrop.",
+    "browserVideoNotSupported": "Your browser does not support the HTML5 video tag."
+  },
+  "contactPage": {
+    "heroBadge": "📍 Visit the Mandir",
+    "heroTitle": "Contact & How to Reach",
+    "heroSubtitle": "Find the exact address, train directions from Titwala station, official contact details, and location map of Maa's Darbar.",
+    "pilgrimNoteTitle": "Pilgrim Note:",
+    "pilgrimNoteDesc": "Titwala is a renowned sacred center located on the Mumbai suburban central railway route. Auto-rickshaws and local transport are readily available from Titwala railway station to the temple area.",
+    "phoneBtn": "Phone Helpline",
+    "emailBtn": "Email Contact",
+    "railwayDesc": "Titwala is a renowned sacred center located on the Mumbai suburban central railway route. Auto-rickshaws and local transport are readily available from Titwala railway station to the temple area.",
+    "mandirLocation": "Titwala, Taluka Kalyan, District Thane, Maharashtra - 421605"
+  },
+  "donationsPage": {
+    "heroBadge": "💛 Devotional Seva",
+    "heroTitle": "Mandir Donations & Devotional Seva",
+    "heroSubtitle": "Your sacred contributions support daily worship, Aarti, Prasad distribution, Navratri celebrations, and the upkeep of Maa Bhavtarni's Mandir.",
+    "lblUpiId": "UPI ID:"
+  },
+  "pageTitles": {
+    "home": "Adi Shakti Maa Vaishno Bhavtarni Mandir | Titwala, Maharashtra",
+    "about": "About the Temple | Adi Shakti Maa Vaishno Bhavtarni Mandir – Titwala",
+    "darshan": "Live Darshan & Timings | Adi Shakti Maa Vaishno Bhavtarni Mandir – Titwala",
+    "festivals": "Festivals & Upcoming Events | Adi Shakti Maa Vaishno Bhavtarni Mandir – Titwala",
+    "gallery": "Photo Gallery & Mandir Video | Adi Shakti Maa Vaishno Bhavtarni Mandir – Titwala",
+    "donations": "Donations & Seva | Adi Shakti Maa Vaishno Bhavtarni Mandir – Titwala",
+    "contact": "Contact & Directions | Adi Shakti Maa Vaishno Bhavtarni Mandir – Titwala"
   }
 }

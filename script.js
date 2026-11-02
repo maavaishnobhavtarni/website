@@ -64,121 +64,157 @@ const TEMPLE_CONFIG = {
     instagram: "" // Optional Instagram link
   },
 
-  // 1.5 Festivals & Events Data Array
-  // Add, edit, or remove festivals here easily.
+  // Festival data fallback: this embedded array keeps the page working if
+  // events.json cannot be fetched (for example, when opening festivals.html via file://).
+  // Normal edits should be made in events.json; loadEventsFromJson() replaces this array when fetch succeeds.
+  // Set isUpcoming: true to include an entry in Upcoming Events. category controls the Festivals filters.
   festivals: [
     {
-      id: "chaitra-navratri",
-      category: "navratri",
-      nameEn: "Chaitra Navratri Mahotsav",
-      nameHi: "चैत्र नवरात्रि महोत्सव",
-      nameMr: "चैत्र नवरात्रौत्सव",
-      dateEn: "Chaitra Shukla Pratipada – Navami (March / April)",
-      dateHi: "चैत्र शुक्ल प्रतिपदा – नवमी (मार्च / अप्रैल)",
-      dateMr: "चैत्र शुक्ल प्रतिपदा – नवमी (मार्च / एप्रिल)",
-      timingsEn: "7:00 AM – 11:00 PM Daily",
-      timingsHi: "प्रातः 7:00 – रात्रि 11:00 प्रतिदिन",
-      timingsMr: "सकाळी 7:00 ते रात्री 11:00 रोज",
-      descEn: "Nine days of divine adoration featuring Ghatasthapana, Akhand Jyot, daily Chandi Path, and grand Kanya Pujan on Navami.",
-      descHi: "घटस्थापना, अखंड ज्योत, नित्य चंडी पाठ एवं नवमी पर कन्या पूजन के साथ नौ दिवसीय पावन महोत्सव।",
-      descMr: "घटस्थापना, अखंड ज्योत, नित्य चंडी पाठ आणि नवमीच्या दिवशी महाकन्या पूजनासह नऊ दिवसांचा पावन सोहळा.",
-      image: "./assets/images/maa-darshan.jpg"
+        "id": "kartik-purnima-deepotsav",
+        "category": "pujas",
+        "isUpcoming": true,
+        "image": "./assets/images/temple-interior.jpg",
+        "name": "Kartik Purnima Mahapooja & 1008 Deepotsav",
+        "badge": "Upcoming Grand Deepotsav",
+        "date": "Kartik Shukla Purnima (Dev Diwali 2026)",
+        "timings": "6:00 PM – 10:30 PM (Maha Deepotsav at 7:00 PM)",
+        "description": "Auspicious Dev Diwali celebrations featuring special Shringar of Maa Vaishno Bhavtarni, 1008 pure cow ghee earthen lamps illumination, Maha Aarti, and distribution of Kheer Prasad."
     },
     {
-      id: "sharad-navratri",
-      category: "navratri",
-      nameEn: "Sharad Navratri Mahotsav",
-      nameHi: "शारदीय नवरात्रि महोत्सव",
-      nameMr: "शारदीय नवरात्रौत्सव",
-      dateEn: "Ashwin Shukla Pratipada – Navami (September / October)",
-      dateHi: "आश्विन शुक्ल प्रतिपदा – नवमी (सितंबर / अक्टूबर)",
-      dateMr: "अश्विन शुक्ल प्रतिपदा – नवमी (सप्टेंबर / ऑक्टोबर)",
-      timingsEn: "7:00 AM – 11:00 PM Extended Darshan",
-      timingsHi: "प्रातः 7:00 – रात्रि 11:00 विस्तारित दर्शन",
-      timingsMr: "सकाळी 7:00 ते रात्री 11:00 विस्तारित दर्शन",
-      descEn: "The grandest annual celebration of Maa Vaishno Bhavtarni with special floral shringar, Mahapuja, devotional Sangeet, and Dandiya Raas.",
-      descHi: "माँ वैष्णो भवतारिणी का महामहोत्सव, विशेष पुष्प श्रृंगार, महापूजा, भक्ति संगीत एवं डांडिया रास।",
-      descMr: "आई वैष्णो भवतारिणींचा सर्वात मोठा वार्षिक उत्सव, विशेष पुष्प शृंगार, महापूजा आणि भक्ती संगीत.",
-      image: "./assets/images/temple-main.jpg"
+        "id": "divya-mata-ki-chowki",
+        "category": "chowki",
+        "isUpcoming": true,
+        "image": "./assets/images/maa-darshan.jpg",
+        "name": "Divya Mata Ki Chowki & Akhand Bhajan Sandhya",
+        "badge": "Special Chowki",
+        "date": "Upcoming Saturday Evening",
+        "timings": "7:30 PM – 11:30 PM",
+        "description": "Soul-stirring devotional bhajans by renowned bhajan mandalis, Akhand Jyot Darshan, floral offerings at Maa's lotus feet, Ardaas prayer, and 56 Bhog Mahaprasad."
     },
     {
-      id: "vijayadashami",
-      category: "navratri",
-      nameEn: "Vijayadashami / Dussehra",
-      nameHi: "विजयादशमी / दशहरा",
-      nameMr: "विजयादशमी / दसरा",
-      dateEn: "Ashwin Shukla Dashami",
-      dateHi: "आश्विन शुक्ल दशमी",
-      dateMr: "अश्विन शुक्ल दशमी",
-      timingsEn: "Special Darshan: 7:00 AM – 10:30 PM",
-      timingsHi: "विशेष दर्शन: प्रातः 7:00 – रात्रि 10:30",
-      timingsMr: "विशेष दर्शन: सकाळी 7:00 ते रात्री 10:30",
-      descEn: "Celebration of the victory of divine righteousness, Aparajita Pujan, Shastra Pujan, and distribution of sacred Prasad.",
-      descHi: "सत्य और धर्म की विजय का महापर्व, अपराजिता पूजन, शस्त्र पूजन एवं पावन महाप्रसाद वितरण।",
-      descMr: "सत्य आणि धर्माच्या विजयाचा महापर्व, अपराजिता पूजन, शस्त्र पूजन आणि पावन महाप्रसाद वाटप.",
-      image: "./assets/images/temple-interior.jpg"
+        "id": "magh-gupt-navratri",
+        "category": "navratri",
+        "isUpcoming": true,
+        "image": "./assets/images/gallery/gallery-3.jpg",
+        "name": "Magha Gupt Navratri Mahotsav",
+        "badge": "Sadhana Utsav",
+        "date": "Magha Shukla Pratipada – Navami",
+        "timings": "7:00 AM – 10:00 PM Daily",
+        "description": "Sacred period for internal spiritual sadhana, Durga Saptashati parayan, Hawan, and special evening aartis seeking divine protection and strength."
     },
     {
-      id: "maa-ki-chowki",
-      category: "chowki",
-      nameEn: "Maa Ki Chowki & Jagran",
-      nameHi: "माता की दिव्य चौकी एवं जागरण",
-      nameMr: "माता की दिव्य चौकी व जागर",
-      dateEn: "Occasional (On Auspicious Occasions & Festivals)",
-      dateHi: "केवल विशेष अवसरों एवं पावन पर्वों पर",
-      dateMr: "केवळ विशेष प्रसंगी व पावन सणांवर",
-      timingsEn: "7:30 PM – 11:30 PM",
-      timingsHi: "सायं 7:30 – रात्रि 11:30",
-      timingsMr: "संध्याकाळी 7:30 ते रात्री 11:30",
-      descEn: "Soul-stirring devotional bhajans, Stuti, Akhand Jyot Darshan, Ardaas, and distribution of sacred Bhog Prasad held on auspicious occasions.",
-      descHi: "विशेष अवसरों पर आयोजित होने वाले भक्तिमय भजन, अखंड ज्योत दर्शन, अरदास एवं पावन भोग प्रसाद वितरण।",
-      descMr: "विशेष प्रसंगी आयोजित होणारी भक्तीपूर्ण भजने, अखंड ज्योत दर्शन, प्रार्थना आणि महाप्रसाद वाटप.",
-      image: "./assets/images/temple-interior.jpg"
+        "id": "maha-shivratri",
+        "category": "pujas",
+        "isUpcoming": true,
+        "image": "./assets/images/temple-interior.jpg",
+        "name": "Maha Shivratri Mahotsav & Akhand Rudrabhishek",
+        "badge": "Maha Shivratri Parv",
+        "date": "Phalguna Krishna Chaturdashi",
+        "timings": "All-Night 4-Prahar Pujan (6:00 AM – Next Morning 6:00 AM)",
+        "description": "Auspicious Shiva-Shakti union celebration featuring continuous Vedic Rudrabhishek, 1008 Bilvapatra archana, milk & honey panchamrit abhishek, and devotional Shiv-Durga aarti."
     },
     {
-      id: "bhajan-kirtan",
-      category: "chowki",
-      nameEn: "Weekly Bhajan & Kirtan Sandhya",
-      nameHi: "साप्ताहिक भजन व कीर्तन संध्या",
-      nameMr: "साप्ताहिक भजन व कीर्तन संध्या",
-      dateEn: "Every Tuesday & Friday Evening",
-      dateHi: "प्रत्येक मंगलवार एवं शुक्रवार सायं",
-      dateMr: "दर मंगळवारी आणि शुक्रवारी संध्याकाळी",
-      timingsEn: "6:30 PM – 8:30 PM",
-      timingsHi: "सायं 6:30 – 8:30",
-      timingsMr: "संध्याकाळी 6:30 ते 8:30",
-      descEn: "Congregational singing of Hanuman Chalisa, Devi Stuti, and devotional Naam Sankirtan every Tuesday and Friday evening.",
-      descHi: "प्रत्येक मंगलवार और शुक्रवार को हनुमान चालीसा, देवी स्तुति एवं सामूहिक संकीर्तन द्वारा मनःशांति की प्राप्ति।",
-      descMr: "दर मंगळवारी आणि शुक्रवारी हनुमान चालीसा, देवी स्तुती आणि सामूहिक नामसंकीर्तनाद्वारे मनःशांतीचा अनुभव.",
-      image: "./assets/images/temple-main.jpg"
+        "id": "temple-sthapna",
+        "category": "pujas",
+        "isUpcoming": true,
+        "image": "./assets/images/temple-main.jpg",
+        "name": "Annual Mandir Sthapna Diwas & Patotsav",
+        "badge": "Mandir Foundation Day",
+        "date": "Annual Foundation Anniversary",
+        "timings": "8:00 AM – 10:00 PM (Maha Bhandara at 1:00 PM)",
+        "description": "Commemorating the holy Pran Pratishtha of Adi Shakti Maa Vaishno Bhavtarni with 108 Kalash Pujan, Maha Yagya, Flag hoisting (Dhwajarohan), and Community Mahaprasad for all devotees."
     },
     {
-      id: "temple-sthapna",
-      category: "pujas",
-      nameEn: "Temple Sthapna Diwas & Mahaprasad",
-      nameHi: "मंदिर स्थापना दिवस एवं महाप्रसाद",
-      nameMr: "मंदिर स्थापना दिन व महाप्रसाद",
-      dateEn: "4th March (Annual Mandir Sthapna Diwas)",
-      dateHi: "4 मार्च (वार्षिक मंदिर स्थापना दिवस)",
-      dateMr: "4 मार्च (वार्षिक मंदिर स्थापना दिन)",
-      timingsEn: "7:00 AM – 10:00 PM",
-      timingsHi: "प्रातः 7:00 – रात्रि 10:00",
-      timingsMr: "सकाळी 7:00 ते रात्री 10:00",
-      descEn: "Annual Mandir Sthapna Diwas celebrations on 4th March featuring sacred Kalash Yatra, continuous chanting, Mahaprasad bhandara, and special Aarti.",
-      descHi: "4 मार्च को आयोजित होने वाला भव्य वार्षिक मंदिर स्थापना दिवस, कलश यात्रा, अखंड संकीर्तन, महाप्रसाद भंडारा और विशेष आरती।",
-      descMr: "4 मार्च रोजी होणारा भव्य वार्षिक मंदिर स्थापना दिन सोहळा, कलश यात्रा, अखंड नामस्मरण, महाप्रसाद भंडारा आणि विशेष महाआरती.",
-      image: "./assets/images/maa-darshan.jpg"
+        "id": "hanuman-jayanti-sundarkand",
+        "category": "chowki",
+        "isUpcoming": true,
+        "image": "./assets/images/gallery/gallery-1.jpg",
+        "name": "Hanuman Jayanti & Sangeetmay Sundarkand Path",
+        "badge": "Sundarkand Mahotsav",
+        "date": "Chaitra Shukla Purnima (Hanuman Janmotsav)",
+        "timings": "4:30 PM – 9:30 PM (Maha Aarti at 8:00 PM)",
+        "description": "Celebration of Shri Hanuman Janmotsav with musical recitation of Shri Sundarkand, sacred Sindoor chola offering, 108 Hanuman Chalisa chanting, and Boondi Mahaprasad distribution."
+    },
+    {
+        "id": "chaitra-navratri",
+        "category": "navratri",
+        "isUpcoming": true,
+        "image": "./assets/images/maa-darshan.jpg",
+        "name": "Chaitra Navratri Mahotsav & Ram Navami",
+        "badge": "Vasant Navratri",
+        "date": "Chaitra Shukla Pratipada – Navami (Spring)",
+        "timings": "7:00 AM – 11:00 PM Extended Darshan",
+        "description": "Nine sacred days of devotion featuring Ghatasthapana, Akhand Jyot, daily Chandi Path, special floral shringar of Maa Bhavtarni, and grand Kanya Pujan on Ram Navami."
+    },
+    {
+        "id": "weekly-sankirtan",
+        "category": "chowki",
+        "isUpcoming": true,
+        "image": "./assets/images/gallery/gallery-2.jpg",
+        "name": "Weekly Tuesday & Saturday Maa Ki Aarti & Kirtan",
+        "badge": "Regular Devotional Seva",
+        "date": "Every Tuesday & Saturday Evening",
+        "timings": "7:00 PM – 8:30 PM",
+        "description": "Weekly community devotional gathering where devotees join in traditional dholak, chimta, and harmonium accompanied bhajan kirtan followed by Halwa and Chana prasad."
+    },
+    {
+        "id": "vasant-panchami",
+        "category": "pujas",
+        "isUpcoming": false,
+        "image": "./assets/images/gallery/gallery-1.jpg",
+        "name": "Vasant Panchami & Saraswati Devi Avahan",
+        "badge": "Saraswati Aradhana",
+        "date": "Magha Shukla Panchami (Spring Arrival)",
+        "timings": "7:30 AM – 1:00 PM & 4:30 PM – 8:30 PM",
+        "description": "Welcoming the auspicious spring season with yellow floral shringar of Maa Vaishno, Saraswati Pujan, book and pen blessings for students, and sweet saffron Kesari prasad."
+    },
+    {
+        "id": "guru-purnima-paduka",
+        "category": "pujas",
+        "isUpcoming": false,
+        "image": "./assets/images/gallery/gallery-2.jpg",
+        "name": "Guru Purnima & Sacred Charan Paduka Archana",
+        "badge": "Charan Paduka Seva",
+        "date": "Ashadha Shukla Purnima (Guru Purnima)",
+        "timings": "8:00 AM – 1:00 PM & 5:00 PM – 9:00 PM",
+        "description": "Special day of gratitude dedicated to the divine lineage and Charan Paduka worship. Devotees offer Panchamrit snan, sandalwood paste, and fragrant flower garlands at Maa's holy lotus feet."
+    },
+    {
+        "id": "sharad-purnima-kheer",
+        "category": "chowki",
+        "isUpcoming": false,
+        "image": "./assets/images/temple-interior.jpg",
+        "name": "Kojagiri (Sharad) Purnima Amrit Kheer Utsav",
+        "badge": "Kojagiri Amrit Utsav",
+        "date": "Ashwin Shukla Purnima (Midnight Full Moon)",
+        "timings": "7:00 PM – 12:30 AM Midnight",
+        "description": "Sacred Kojagiri night celebrations with moonlight bhajan sandhya, Lakshmi-Vaishno pujan, and distribution of saffron-cardamom Amrit Kheer kept under the nectar-raining full moon."
+    },
+    {
+        "id": "sharad-navratri",
+        "category": "navratri",
+        "isUpcoming": false,
+        "image": "./assets/images/temple-main.jpg",
+        "name": "Sharad Navratri Mahotsav",
+        "badge": "Sharad Utsav",
+        "date": "Ashwin Shukla Pratipada – Navami (Autumn)",
+        "timings": "7:00 AM – 11:00 PM Extended Hours",
+        "description": "The most magnificent autumn festival at the temple with 9 days of royal poshak shringar, Tridevi Mahapooja, Dandiya Raas, and thousands of devotees seeking Maa's blessings."
+    },
+    {
+        "id": "vijayadashami",
+        "category": "navratri",
+        "isUpcoming": false,
+        "image": "./assets/images/maa-darshan.jpg",
+        "name": "Vijayadashami / Dussehra Utsav",
+        "badge": "Victory of Dharma",
+        "date": "Ashwin Shukla Dashami",
+        "timings": "Special Darshan: 7:00 AM – 10:30 PM",
+        "description": "Commemorating the victory of Maa Durga over Mahishasura and righteousness over unrighteousness. Featuring Shastra Pujan, Aparajita Pujan, and distribution of holy Prasad."
     }
-  ],
+],
 
-  // 1.6 Sacred Mandir Video Reference
-  video: {
-    videoPath: "./assets/videos/temple-video.mp4",
-    posterPath: "./assets/images/maa-darshan.jpg"
-  },
-
-  // 1.7 Photo Gallery Data Array
-  // Easily add new photos by placing them in assets/images/gallery/ and adding them below.
+  // 1.5 Photo Gallery Configuration
   gallery: [
     {
       id: "gal-1",
@@ -212,7 +248,7 @@ const TEMPLE_CONFIG = {
       captionEn: "Sacred silver lotus feet of the Divine Mothers adorned with fresh marigolds, fragrant roses, and golden crowns.",
       captionHi: "गुलाब, गेंदा पुष्प मंडलों एवं स्वर्ण छत्र से अलंकृत जगज्जननी के पावन रजत चरण कमल।",
       captionMr: "गुलाब, झेंडूच्या फुलांनी आणि सुवर्ण मुकुटांनी सजवलेली जगन्मातेची पवित्र रौप्य चरणकमले."
-    }
+  }
   ]
 };
 
@@ -222,6 +258,72 @@ const TEMPLE_CONFIG = {
    ========================================================================== */
 const FALLBACK_TRANSLATIONS = {
   en: {
+    "festivalEvents.kartik-purnima-deepotsav.name": "Kartik Purnima Mahapooja & 1008 Deepotsav",
+    "festivalEvents.kartik-purnima-deepotsav.badge": "Upcoming Grand Deepotsav",
+    "festivalEvents.kartik-purnima-deepotsav.date": "Kartik Shukla Purnima (Dev Diwali 2026)",
+    "festivalEvents.kartik-purnima-deepotsav.timings": "6:00 PM – 10:30 PM (Maha Deepotsav at 7:00 PM)",
+    "festivalEvents.kartik-purnima-deepotsav.description": "Auspicious Dev Diwali celebrations featuring special Shringar of Maa Vaishno Bhavtarni, 1008 pure cow ghee earthen lamps illumination, Maha Aarti, and distribution of Kheer Prasad.",
+    "festivalEvents.divya-mata-ki-chowki.name": "Divya Mata Ki Chowki & Akhand Bhajan Sandhya",
+    "festivalEvents.divya-mata-ki-chowki.badge": "Special Chowki",
+    "festivalEvents.divya-mata-ki-chowki.date": "Upcoming Saturday Evening",
+    "festivalEvents.divya-mata-ki-chowki.timings": "7:30 PM – 11:30 PM",
+    "festivalEvents.divya-mata-ki-chowki.description": "Soul-stirring devotional bhajans by renowned bhajan mandalis, Akhand Jyot Darshan, floral offerings at Maa's lotus feet, Ardaas prayer, and 56 Bhog Mahaprasad.",
+    "festivalEvents.magh-gupt-navratri.name": "Magha Gupt Navratri Mahotsav",
+    "festivalEvents.magh-gupt-navratri.badge": "Sadhana Utsav",
+    "festivalEvents.magh-gupt-navratri.date": "Magha Shukla Pratipada – Navami",
+    "festivalEvents.magh-gupt-navratri.timings": "7:00 AM – 10:00 PM Daily",
+    "festivalEvents.magh-gupt-navratri.description": "Sacred period for internal spiritual sadhana, Durga Saptashati parayan, Hawan, and special evening aartis seeking divine protection and strength.",
+    "festivalEvents.maha-shivratri.name": "Maha Shivratri Mahotsav & Akhand Rudrabhishek",
+    "festivalEvents.maha-shivratri.badge": "Maha Shivratri Parv",
+    "festivalEvents.maha-shivratri.date": "Phalguna Krishna Chaturdashi",
+    "festivalEvents.maha-shivratri.timings": "All-Night 4-Prahar Pujan (6:00 AM – Next Morning 6:00 AM)",
+    "festivalEvents.maha-shivratri.description": "Auspicious Shiva-Shakti union celebration featuring continuous Vedic Rudrabhishek, 1008 Bilvapatra archana, milk & honey panchamrit abhishek, and devotional Shiv-Durga aarti.",
+    "festivalEvents.temple-sthapna.name": "Annual Mandir Sthapna Diwas & Patotsav",
+    "festivalEvents.temple-sthapna.badge": "Mandir Foundation Day",
+    "festivalEvents.temple-sthapna.date": "Annual Foundation Anniversary",
+    "festivalEvents.temple-sthapna.timings": "8:00 AM – 10:00 PM (Maha Bhandara at 1:00 PM)",
+    "festivalEvents.temple-sthapna.description": "Commemorating the holy Pran Pratishtha of Adi Shakti Maa Vaishno Bhavtarni with 108 Kalash Pujan, Maha Yagya, Flag hoisting (Dhwajarohan), and Community Mahaprasad for all devotees.",
+    "festivalEvents.hanuman-jayanti-sundarkand.name": "Hanuman Jayanti & Sangeetmay Sundarkand Path",
+    "festivalEvents.hanuman-jayanti-sundarkand.badge": "Sundarkand Mahotsav",
+    "festivalEvents.hanuman-jayanti-sundarkand.date": "Chaitra Shukla Purnima (Hanuman Janmotsav)",
+    "festivalEvents.hanuman-jayanti-sundarkand.timings": "4:30 PM – 9:30 PM (Maha Aarti at 8:00 PM)",
+    "festivalEvents.hanuman-jayanti-sundarkand.description": "Celebration of Shri Hanuman Janmotsav with musical recitation of Shri Sundarkand, sacred Sindoor chola offering, 108 Hanuman Chalisa chanting, and Boondi Mahaprasad distribution.",
+    "festivalEvents.chaitra-navratri.name": "Chaitra Navratri Mahotsav & Ram Navami",
+    "festivalEvents.chaitra-navratri.badge": "Vasant Navratri",
+    "festivalEvents.chaitra-navratri.date": "Chaitra Shukla Pratipada – Navami (Spring)",
+    "festivalEvents.chaitra-navratri.timings": "7:00 AM – 11:00 PM Extended Darshan",
+    "festivalEvents.chaitra-navratri.description": "Nine sacred days of devotion featuring Ghatasthapana, Akhand Jyot, daily Chandi Path, special floral shringar of Maa Bhavtarni, and grand Kanya Pujan on Ram Navami.",
+    "festivalEvents.weekly-sankirtan.name": "Weekly Tuesday & Saturday Maa Ki Aarti & Kirtan",
+    "festivalEvents.weekly-sankirtan.badge": "Regular Devotional Seva",
+    "festivalEvents.weekly-sankirtan.date": "Every Tuesday & Saturday Evening",
+    "festivalEvents.weekly-sankirtan.timings": "7:00 PM – 8:30 PM",
+    "festivalEvents.weekly-sankirtan.description": "Weekly community devotional gathering where devotees join in traditional dholak, chimta, and harmonium accompanied bhajan kirtan followed by Halwa and Chana prasad.",
+    "festivalEvents.vasant-panchami.name": "Vasant Panchami & Saraswati Devi Avahan",
+    "festivalEvents.vasant-panchami.badge": "Saraswati Aradhana",
+    "festivalEvents.vasant-panchami.date": "Magha Shukla Panchami (Spring Arrival)",
+    "festivalEvents.vasant-panchami.timings": "7:30 AM – 1:00 PM & 4:30 PM – 8:30 PM",
+    "festivalEvents.vasant-panchami.description": "Welcoming the auspicious spring season with yellow floral shringar of Maa Vaishno, Saraswati Pujan, book and pen blessings for students, and sweet saffron Kesari prasad.",
+    "festivalEvents.guru-purnima-paduka.name": "Guru Purnima & Sacred Charan Paduka Archana",
+    "festivalEvents.guru-purnima-paduka.badge": "Charan Paduka Seva",
+    "festivalEvents.guru-purnima-paduka.date": "Ashadha Shukla Purnima (Guru Purnima)",
+    "festivalEvents.guru-purnima-paduka.timings": "8:00 AM – 1:00 PM & 5:00 PM – 9:00 PM",
+    "festivalEvents.guru-purnima-paduka.description": "Special day of gratitude dedicated to the divine lineage and Charan Paduka worship. Devotees offer Panchamrit snan, sandalwood paste, and fragrant flower garlands at Maa's holy lotus feet.",
+    "festivalEvents.sharad-purnima-kheer.name": "Kojagiri (Sharad) Purnima Amrit Kheer Utsav",
+    "festivalEvents.sharad-purnima-kheer.badge": "Kojagiri Amrit Utsav",
+    "festivalEvents.sharad-purnima-kheer.date": "Ashwin Shukla Purnima (Midnight Full Moon)",
+    "festivalEvents.sharad-purnima-kheer.timings": "7:00 PM – 12:30 AM Midnight",
+    "festivalEvents.sharad-purnima-kheer.description": "Sacred Kojagiri night celebrations with moonlight bhajan sandhya, Lakshmi-Vaishno pujan, and distribution of saffron-cardamom Amrit Kheer kept under the nectar-raining full moon.",
+    "festivalEvents.sharad-navratri.name": "Sharad Navratri Mahotsav",
+    "festivalEvents.sharad-navratri.badge": "Sharad Utsav",
+    "festivalEvents.sharad-navratri.date": "Ashwin Shukla Pratipada – Navami (Autumn)",
+    "festivalEvents.sharad-navratri.timings": "7:00 AM – 11:00 PM Extended Hours",
+    "festivalEvents.sharad-navratri.description": "The most magnificent autumn festival at the temple with 9 days of royal poshak shringar, Tridevi Mahapooja, Dandiya Raas, and thousands of devotees seeking Maa's blessings.",
+    "festivalEvents.vijayadashami.name": "Vijayadashami / Dussehra Utsav",
+    "festivalEvents.vijayadashami.badge": "Victory of Dharma",
+    "festivalEvents.vijayadashami.date": "Ashwin Shukla Dashami",
+    "festivalEvents.vijayadashami.timings": "Special Darshan: 7:00 AM – 10:30 PM",
+    "festivalEvents.vijayadashami.description": "Commemorating the victory of Maa Durga over Mahishasura and righteousness over unrighteousness. Featuring Shastra Pujan, Aparajita Pujan, and distribution of holy Prasad.",
+
     "nav.home": "Home",
     "nav.about": "About Temple",
     "nav.liveDarshan": "Live Darshan",
@@ -360,6 +462,72 @@ const FALLBACK_TRANSLATIONS = {
     "footer.backToTop": "Back to Top"
   },
   hi: {
+    "festivalEvents.kartik-purnima-deepotsav.name": "कार्तिक पूर्णिमा महापूजा एवं 1008 दीपदान",
+    "festivalEvents.kartik-purnima-deepotsav.badge": "Upcoming Grand Deepotsav",
+    "festivalEvents.kartik-purnima-deepotsav.date": "कार्तिक शुक्ल पूर्णिमा (देव दीपावली 2026)",
+    "festivalEvents.kartik-purnima-deepotsav.timings": "सायं 6:00 – रात्रि 10:30 (भव्य महादीपदान सायं 7:00 बजे)",
+    "festivalEvents.kartik-purnima-deepotsav.description": "देव दीपावली का पावन महापर्व। माँ वैष्णो का अलौकिक श्वेत-स्वर्ण श्रृंगार, 1008 शुद्ध गोघृत दीपकों का भव्य दीपोत्सव, महाआरती एवं पंचामृत खीर महाप्रसाद वितरण।",
+    "festivalEvents.divya-mata-ki-chowki.name": "दिव्य माता की पावन चौकी एवं भजन संध्या",
+    "festivalEvents.divya-mata-ki-chowki.badge": "Special Chowki",
+    "festivalEvents.divya-mata-ki-chowki.date": "आगामी शनिवार सायं 7:30 बजे",
+    "festivalEvents.divya-mata-ki-chowki.timings": "सायं 7:30 – रात्रि 11:30",
+    "festivalEvents.divya-mata-ki-chowki.description": "सुप्रसिद्ध भजन मंडलियों द्वारा भावपूर्ण देवी भजन, अखंड पावन ज्योति दर्शन, माँ के चरणों में अरदास एवं छप्पन भोग महाप्रसाद वितरण। समस्त श्रद्धालु सपरिवार सादर आमंत्रित हैं।",
+    "festivalEvents.magh-gupt-navratri.name": "माघ गुप्त नवरात्रि महोत्सव एवं नवचंडी पाठ",
+    "festivalEvents.magh-gupt-navratri.badge": "Sadhana Utsav",
+    "festivalEvents.magh-gupt-navratri.date": "माघ शुक्ल प्रतिपदा – नवमी",
+    "festivalEvents.magh-gupt-navratri.timings": "प्रातः 7:00 – रात्रि 10:00 प्रतिदिन",
+    "festivalEvents.magh-gupt-navratri.description": "आंतरिक आध्यात्मिक साधना, दुर्गा सप्तशती पाठ, नित्य महाहवन एवं माँ भगवती के गुप्त स्वरूपों की विशेष आराधना का पावन काल।",
+    "festivalEvents.maha-shivratri.name": "महाशिवरात्रि महोत्सव एवं अखंड रुद्राभिषेक",
+    "festivalEvents.maha-shivratri.badge": "Maha Shivratri Parv",
+    "festivalEvents.maha-shivratri.date": "फाल्गुन कृष्ण चतुर्दशी (महाशिवरात्रि)",
+    "festivalEvents.maha-shivratri.timings": "अहोरात्र चार प्रहर पूजन (प्रातः 6:00 – अगले दिन प्रातः 6:00)",
+    "festivalEvents.maha-shivratri.description": "शिव-शक्ति मिलन का पावन महापर्व। चारों प्रहर अखंड वैदिक रुद्राभिषेक, 1008 बिल्वपत्र अर्चन, पंचामृत अभिषेक एवं रात्रि जागरण शिव संकीर्तन।",
+    "festivalEvents.temple-sthapna.name": "वार्षिक मंदिर स्थापना दिवस एवं पाटोत्सव",
+    "festivalEvents.temple-sthapna.badge": "Mandir Foundation Day",
+    "festivalEvents.temple-sthapna.date": "वार्षिक पाटोत्सव दिवस",
+    "festivalEvents.temple-sthapna.timings": "प्रातः 8:00 – रात्रि 10:00 (विशाल महाभंडारा दोपहर 1:00 बजे)",
+    "festivalEvents.temple-sthapna.description": "माँ वैष्णो भवतारिणी की पावन प्राण-प्रतिष्ठा वर्षगांठ। 108 कलश महाभिषेक, ध्वजारोहण, विशाल शतचंडी महायज्ञ एवं समस्त भक्तों हेतु अखंड महाप्रसाद।",
+    "festivalEvents.hanuman-jayanti-sundarkand.name": "हनुमान जयंती एवं संगीतमय सुंदरकांड पाठ",
+    "festivalEvents.hanuman-jayanti-sundarkand.badge": "Sundarkand Mahotsav",
+    "festivalEvents.hanuman-jayanti-sundarkand.date": "चैत्र शुक्ल पूर्णिमा (हनुमान जन्मोत्सव)",
+    "festivalEvents.hanuman-jayanti-sundarkand.timings": "सायं 4:30 – रात्रि 9:30 (महाआरती सायं 8:00 बजे)",
+    "festivalEvents.hanuman-jayanti-sundarkand.description": "पवनपुत्र हनुमान जन्मोत्सव का पावन पर्व। सुमधुर वाद्य यंत्रों सहित संगीतमय सुंदरकांड पाठ, सिंदूर चोला अर्पण, 108 हनुमान चालीसा पाठ एवं बूंदी महाप्रसाद।",
+    "festivalEvents.chaitra-navratri.name": "चैत्र नवरात्रि महोत्सव एवं राम नवमी",
+    "festivalEvents.chaitra-navratri.badge": "Vasant Navratri",
+    "festivalEvents.chaitra-navratri.date": "चैत्र शुक्ल प्रतिपदा – नवमी (वसंत नवरात्र)",
+    "festivalEvents.chaitra-navratri.timings": "प्रातः 7:00 – रात्रि 11:00 विस्तारित दर्शन",
+    "festivalEvents.chaitra-navratri.description": "घटस्थापना, अखंड पावन ज्योति, नित्य चंडी पाठ, माँ वैष्णो का अलौकिक पुष्प श्रृंगार एवं महानवमी पर 108 कन्या पूजन व विशाल भंडारा।",
+    "festivalEvents.weekly-sankirtan.name": "साप्ताहिक मंगलवार व शनिवार विशेष आरती एवं कीर्तन",
+    "festivalEvents.weekly-sankirtan.badge": "Regular Devotional Seva",
+    "festivalEvents.weekly-sankirtan.date": "प्रत्येक मंगलवार एवं शनिवार सायं",
+    "festivalEvents.weekly-sankirtan.timings": "सायं 7:00 – 8:30",
+    "festivalEvents.weekly-sankirtan.description": "साप्ताहिक पावन संकीर्तन संध्या। ढोलक-मंजीरों के साथ माँ के भजनों का आनंद, सामूहिक महाआरती एवं हलवा-चना प्रसाद वितरण।",
+    "festivalEvents.vasant-panchami.name": "वसंत पंचमी एवं माँ सरस्वती महापूजा",
+    "festivalEvents.vasant-panchami.badge": "Saraswati Aradhana",
+    "festivalEvents.vasant-panchami.date": "माघ शुक्ल पंचमी (ऋतुराज वसंत आगमन)",
+    "festivalEvents.vasant-panchami.timings": "प्रातः 7:30 – दोपहर 1:00 एवं सायं 4:30 – 8:30",
+    "festivalEvents.vasant-panchami.description": "माँ भगवती का पीत वस्त्र एवं पुष्प श्रृंगार। ज्ञानदायिनी माँ सरस्वती की विशेष पूजा, विद्यार्थियों हेतु विद्यारंभ आशीर्वाद एवं पावन केसरी भात प्रसाद वितरण।",
+    "festivalEvents.guru-purnima-paduka.name": "गुरु पूर्णिमा एवं श्री चरण पादुका महापूजन",
+    "festivalEvents.guru-purnima-paduka.badge": "Charan Paduka Seva",
+    "festivalEvents.guru-purnima-paduka.date": "आषाढ़ शुक्ल पूर्णिमा (गुरु पूर्णिमा)",
+    "festivalEvents.guru-purnima-paduka.timings": "प्रातः 8:00 – दोपहर 1:00 एवं सायं 5:00 – 9:00",
+    "festivalEvents.guru-purnima-paduka.description": "माँ वैष्णो के दिव्य चरण पादुकाओं का पंचामृत महाभिषेक, केशर-चंदन लेपन, सहस्त्रार्चन एवं गुरु कृपा प्राप्ति हेतु विशेष प्रार्थना सभा।",
+    "festivalEvents.sharad-purnima-kheer.name": "कोजागिरी पूर्णिमा अमृत खीर महामहोत्सव",
+    "festivalEvents.sharad-purnima-kheer.badge": "Kojagiri Amrit Utsav",
+    "festivalEvents.sharad-purnima-kheer.date": "आश्विन शुक्ल पूर्णिमा (शरद पूर्णिमा निशा)",
+    "festivalEvents.sharad-purnima-kheer.timings": "सायं 7:00 – मध्यरात्रि 12:30",
+    "festivalEvents.sharad-purnima-kheer.description": "शरद पूर्णिमा की अमृतमयी धवल चांदनी में भव्य संकीर्तन। माँ लक्ष्मी-वैष्णो विशेष पूजन एवं चांदनी में अभिमंत्रित अमृततुल्य खीर महाप्रसाद वितरण।",
+    "festivalEvents.sharad-navratri.name": "शारदीय नवरात्रि महामहोत्सव",
+    "festivalEvents.sharad-navratri.badge": "Sharad Utsav",
+    "festivalEvents.sharad-navratri.date": "आश्विन शुक्ल प्रतिपदा – नवमी (शरद ऋतु)",
+    "festivalEvents.sharad-navratri.timings": "प्रातः 7:00 – रात्रि 11:00 निरंतर दर्शन",
+    "festivalEvents.sharad-navratri.description": "आदि शक्ति का भव्यतम शारदीय उत्सव। 9 दिनों तक माँ का दिव्य जरदोजी श्रृंगार, विशेष हवन, गरबा व डांडिया रास तथा महाअष्टमी को भव्य महाआरती।",
+    "festivalEvents.vijayadashami.name": "विजयादशमी / दशहरा महापर्व",
+    "festivalEvents.vijayadashami.badge": "Victory of Dharma",
+    "festivalEvents.vijayadashami.date": "आश्विन शुक्ल दशमी",
+    "festivalEvents.vijayadashami.timings": "विशेष दर्शन: प्रातः 7:00 – रात्रि 10:30",
+    "festivalEvents.vijayadashami.description": "अधर्म पर धर्म और असत्य पर सत्य की विजय का महापर्व। माँ अपराजिता पूजन, आयुध पूजन एवं स्वर्ण पत्ती (आपटा) व पावन महाप्रसाद वितरण।",
+
     "nav.home": "मुख्य पृष्ठ",
     "nav.about": "मंदिर परिचय",
     "nav.liveDarshan": "लाइव दर्शन",
@@ -484,6 +652,72 @@ const FALLBACK_TRANSLATIONS = {
     "footer.backToTop": "शीर्ष पर जाएं"
   },
   mr: {
+    "festivalEvents.kartik-purnima-deepotsav.name": "कार्तिक पौर्णिमा महापूजा व 1008 दीपदान सोहळा",
+    "festivalEvents.kartik-purnima-deepotsav.badge": "Upcoming Grand Deepotsav",
+    "festivalEvents.kartik-purnima-deepotsav.date": "कार्तिक शुक्ल पौर्णिमा (त्रिपुरारी पौर्णिमा / देव दिवाळी 2026)",
+    "festivalEvents.kartik-purnima-deepotsav.timings": "संध्याकाळी 6:00 ते रात्री 10:30 (महादीपदान संध्याकाळी 7:00 वाजता)",
+    "festivalEvents.kartik-purnima-deepotsav.description": "देव दिवाळी व त्रिपुरारी पौर्णिमेचा पावन उत्सव. आई वैष्णो भवतीरिणींचा विशेष सुवर्ण शृंगार, 1008 शुद्ध तुपाच्या दिव्यांचे महादीपदान, महाआरती व खीर महाप्रसाद वाटप.",
+    "festivalEvents.divya-mata-ki-chowki.name": "दिव्य माता की पावन चौकी व भजन संध्या",
+    "festivalEvents.divya-mata-ki-chowki.badge": "Special Chowki",
+    "festivalEvents.divya-mata-ki-chowki.date": "आगामी शनिवारी संध्याकाळी 7:30 वाजता",
+    "festivalEvents.divya-mata-ki-chowki.timings": "संध्याकाळी 7:30 ते रात्री 11:30",
+    "festivalEvents.divya-mata-ki-chowki.description": "प्रसिद्ध भजन मंडळांद्वारे भावपूर्ण भक्तीगीते, अखंड ज्योत दर्शन, आईंच्या चरणी प्रार्थना आणि छप्पन भोग महाप्रसाद वाटप.",
+    "festivalEvents.magh-gupt-navratri.name": "माघ गुप्त नवरात्रौत्सव व नवचंडी पाठ",
+    "festivalEvents.magh-gupt-navratri.badge": "Sadhana Utsav",
+    "festivalEvents.magh-gupt-navratri.date": "माघ शुक्ल प्रतिपदा – नवमी",
+    "festivalEvents.magh-gupt-navratri.timings": "दररोज सकाळी 7:00 ते रात्री 10:00",
+    "festivalEvents.magh-gupt-navratri.description": "आत्मिक साधना, दुर्गा सप्तशती पारायण, नित्य महाहवन आणि आई भगवतींच्या गुप्त रूपांची पावन उपासना.",
+    "festivalEvents.maha-shivratri.name": "महाशिवरात्री महोत्सव व अखंड रुद्राभिषेक",
+    "festivalEvents.maha-shivratri.badge": "Maha Shivratri Parv",
+    "festivalEvents.maha-shivratri.date": "फाल्गुन कृष्ण चतुर्दशी (महाशिवरात्र)",
+    "festivalEvents.maha-shivratri.timings": "अखंड चार प्रहर पूजा (सकाळी 6:00 ते दुसऱ्या दिवशी सकाळी 6:00)",
+    "festivalEvents.maha-shivratri.description": "शिव-शक्तीच्या पवित्र मिलनाचे महापर्व. चारही प्रहर अखंड वैदिक रुद्राभिषेक, 1008 बेलपत्र अर्पण, पंचामृत स्नान व रात्रभर शिव संकीर्तन.",
+    "festivalEvents.temple-sthapna.name": "वार्षिक मंदिर स्थापना दिन व पाटोत्सव सोहळा",
+    "festivalEvents.temple-sthapna.badge": "Mandir Foundation Day",
+    "festivalEvents.temple-sthapna.date": "वार्षिक पाटोत्सव सोहळा दिन",
+    "festivalEvents.temple-sthapna.timings": "सकाळी 8:00 ते रात्री 10:00 (महाप्रसाद दुपारी 1:00 वाजता)",
+    "festivalEvents.temple-sthapna.description": "आई वैष्णो भवतारिणींच्या पावन प्राण-प्रतिष्ठा वर्धापन दिन. 108 कलश महाभिषेक, ध्वजारोहण, महायज्ञ आणि सर्व भाविकांसाठी भव्य महाप्रसाद वाटप.",
+    "festivalEvents.hanuman-jayanti-sundarkand.name": "हनुमान जयंती व संगीतमय सुंदरकांड पाठ",
+    "festivalEvents.hanuman-jayanti-sundarkand.badge": "Sundarkand Mahotsav",
+    "festivalEvents.hanuman-jayanti-sundarkand.date": "चैत्र शुक्ल पौर्णिमा (हनुमान जन्मोत्सव)",
+    "festivalEvents.hanuman-jayanti-sundarkand.timings": "संध्याकाळी 4:30 ते रात्री 9:30 (महाआरती सायं 8:00 वाजता)",
+    "festivalEvents.hanuman-jayanti-sundarkand.description": "श्री हनुमान जन्मोत्सव सोहळा. वाद्यांच्या गजरात संगीतमय सुंदरकांड पाठ, सिंदूर चोला अर्पण, 108 हनुमान चालीसा पाठ व बुंदी महाप्रसाद वाटप.",
+    "festivalEvents.chaitra-navratri.name": "चैत्र नवरात्रौत्सव व राम नवमी सोहळा",
+    "festivalEvents.chaitra-navratri.badge": "Vasant Navratri",
+    "festivalEvents.chaitra-navratri.date": "चैत्र शुक्ल प्रतिपदा – नवमी (वसंत नवरात्र)",
+    "festivalEvents.chaitra-navratri.timings": "सकाळी 7:00 ते रात्री 11:00 विस्तारित दर्शन",
+    "festivalEvents.chaitra-navratri.description": "घटस्थापना, अखंड ज्योत, नित्य चंडी पाठ, आईंचा दिव्य पुष्प शृंगार आणि महानवमीच्या दिवशी महाकन्या पूजनासह नऊ दिवसांचा पावन सोहळा.",
+    "festivalEvents.weekly-sankirtan.name": "साप्ताहिक मंगळवार व शनिवार विशेष आरती व कीर्तन",
+    "festivalEvents.weekly-sankirtan.badge": "Regular Devotional Seva",
+    "festivalEvents.weekly-sankirtan.date": "प्रत्येक मंगळवारी व शनिवारी संध्याकाळी",
+    "festivalEvents.weekly-sankirtan.timings": "संध्याकाळी 7:00 ते 8:30",
+    "festivalEvents.weekly-sankirtan.description": "साप्ताहिक भक्ती संकीर्तन संध्या. ढोलक आणि टाळांच्या गजरात भक्तीगीते, सामूहिक महाआरती व हलवा-हरभरा प्रसादाचे वाटप.",
+    "festivalEvents.vasant-panchami.name": "वसंत पंचमी व सरस्वती देवी महापूजा",
+    "festivalEvents.vasant-panchami.badge": "Saraswati Aradhana",
+    "festivalEvents.vasant-panchami.date": "माघ शुक्ल पंचमी (वसंत आगमन सोहळा)",
+    "festivalEvents.vasant-panchami.timings": "सकाळी 7:30 ते दुपारी 1:00 आणि संध्याकाळी 4:30 ते 8:30",
+    "festivalEvents.vasant-panchami.description": "आई वैष्णो भवतीरिणींचा पिवळ्या फुलांचा शृंगार, ज्ञानदात्री सरस्वती मातेची विशेष पूजा, विद्यार्थ्यांसाठी आशीर्वाद व पावन केसरी प्रसादाचे वाटप.",
+    "festivalEvents.guru-purnima-paduka.name": "गुरु पौर्णिमा व श्री चरण पादुका महापूजन",
+    "festivalEvents.guru-purnima-paduka.badge": "Charan Paduka Seva",
+    "festivalEvents.guru-purnima-paduka.date": "आषाढ शुक्ल पौर्णिमा (गुरु पौर्णिमा)",
+    "festivalEvents.guru-purnima-paduka.timings": "सकाळी 8:00 ते दुपारी 1:00 आणि संध्याकाळी 5:00 ते 9:00",
+    "festivalEvents.guru-purnima-paduka.description": "आईंच्या पवित्र चरण पादुकांचे पंचामृत स्नान, केशर-चंदन उटी, सहस्त्रार्चन आणि गुरु कृपेसाठी विशेष भक्ती सोहळा.",
+    "festivalEvents.sharad-purnima-kheer.name": "कोजागिरी पौर्णिमा अमृत खीर महामहोत्सव",
+    "festivalEvents.sharad-purnima-kheer.badge": "Kojagiri Amrit Utsav",
+    "festivalEvents.sharad-purnima-kheer.date": "अश्विन शुक्ल पौर्णिमा (कोजागिरी पौर्णिमा)",
+    "festivalEvents.sharad-purnima-kheer.timings": "संध्याकाळी 7:00 ते मध्यरात्री 12:30",
+    "festivalEvents.sharad-purnima-kheer.description": "कोजागिरी पौर्णिमेच्या चांदण्यात भक्तीमय संकीर्तन, लक्ष्मी-वैष्णो पूजन आणि अमृततुल्य केशरी दुध-खीर महाप्रसाद वाटप.",
+    "festivalEvents.sharad-navratri.name": "शारदीय नवरात्रौत्सव महासोहळा",
+    "festivalEvents.sharad-navratri.badge": "Sharad Utsav",
+    "festivalEvents.sharad-navratri.date": "अश्विन शुक्ल प्रतिपदा – नवमी (शरद ऋतू)",
+    "festivalEvents.sharad-navratri.timings": "सकाळी 7:00 ते रात्री 11:00 सलग दर्शन",
+    "festivalEvents.sharad-navratri.description": "आई वैष्णो भवतारिणींचा सर्वात मोठा वार्षिक सोहळा, विशेष पुष्प शृंगार, महापूजा, गरबा-दांडिया आणि हजारो भाविकांची अलोट गर्दी.",
+    "festivalEvents.vijayadashami.name": "विजयादशमी / दसरा महापर्व",
+    "festivalEvents.vijayadashami.badge": "Victory of Dharma",
+    "festivalEvents.vijayadashami.date": "अश्विन शुक्ल दशमी",
+    "festivalEvents.vijayadashami.timings": "विशेष दर्शन: सकाळी 7:00 ते रात्री 10:30",
+    "festivalEvents.vijayadashami.description": "सत्य आणि धर्माच्या विजयाचा महापर्व, अपराजिता पूजन, शस्त्र पूजन, सोने वाटप (आपट्याची पाने) आणि पावन महाप्रसाद वाटप.",
+
     "nav.home": "मुख्य पृष्ठ",
     "nav.about": "मंदिर परिचय",
     "nav.liveDarshan": "थेट दर्शन",
@@ -613,7 +847,10 @@ const FALLBACK_TRANSLATIONS = {
    3. MULTILINGUAL & STATE MANAGEMENT
    ========================================================================== */
 let currentLanguage = "en";
+let languageLoadSequence = 0;
 const loadedTranslations = {};
+const rawTranslations = {};
+const originalPageText = new WeakMap();
 
 // Safe storage access (handles disabled localStorage in private mode)
 function safeGetStorage(key, defaultVal) {
@@ -637,6 +874,7 @@ function safeSetStorage(key, val) {
  * Fetch or load translations for a given language
  */
 async function loadLanguage(lang) {
+  const loadSequence = ++languageLoadSequence;
   currentLanguage = lang;
   safeSetStorage("mandir_preferred_lang", lang);
 
@@ -646,13 +884,28 @@ async function loadLanguage(lang) {
       const response = await fetch(`./locales/${lang}.json`);
       if (!response.ok) throw new Error("HTTP error " + response.status);
       const json = await response.json();
-      // Flatten nested JSON keys into dot notation
+      rawTranslations[lang] = json;
       loadedTranslations[lang] = flattenTranslations(json);
     } catch (err) {
-      console.warn(`Note: Using bundled fallback translations for "${lang}" (Fetch error: ${err.message})`);
+      console.warn(`Note: Using fallback translations for "${lang}" (${err.message})`);
       loadedTranslations[lang] = FALLBACK_TRANSLATIONS[lang] || FALLBACK_TRANSLATIONS["en"];
     }
   }
+
+  // Ensure English raw translations are available for baseline text matching
+  if (lang !== "en" && !rawTranslations["en"]) {
+    try {
+      const enRes = await fetch(`./locales/en.json`);
+      if (enRes.ok) {
+        rawTranslations["en"] = await enRes.json();
+      }
+    } catch (e) {
+      // fallback
+    }
+  }
+
+  // Ignore a slower response if the visitor selected another language meanwhile.
+  if (loadSequence !== languageLoadSequence) return;
 
   applyTranslations(loadedTranslations[lang]);
   updateActiveLanguageButtons(lang);
@@ -707,11 +960,58 @@ function applyTranslations(dict) {
     }
   });
 
+  // Translate plain HTML text too when it exactly matches an English locale value.
+  // Keep the original node text so changing languages repeatedly never translates
+  // a previous translation or loses the source copy.
+  const englishLocale = rawTranslations["en"];
+  if (englishLocale) {
+    const englishPageText = englishLocale.pageText || {};
+    const selectedPageText = rawTranslations[currentLanguage]?.pageText || {};
+    const english = flattenTranslations(englishLocale);
+    const textToKey = new Map();
+    const ambiguous = new Set();
+    Object.entries(english).forEach(([key, value]) => {
+      if (typeof value !== "string") return;
+      if (textToKey.has(value) && textToKey.get(value) !== key) ambiguous.add(value);
+      else textToKey.set(value, key);
+    });
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let textNode;
+    while ((textNode = walker.nextNode())) {
+      const parent = textNode.parentElement;
+      if (!parent || parent.closest("[data-i18n]") || parent.closest("script, style, textarea")) continue;
+      if (!originalPageText.has(textNode)) originalPageText.set(textNode, textNode.nodeValue);
+      const original = originalPageText.get(textNode);
+      const value = original.trim();
+      if (Object.prototype.hasOwnProperty.call(englishPageText, value) && selectedPageText[value]) {
+        const start = original.indexOf(value);
+        textNode.nodeValue = original.slice(0, start) + selectedPageText[value] + original.slice(start + value.length);
+        continue;
+      }
+      const key = textToKey.get(value);
+      if (!key || ambiguous.has(value) || typeof dict[key] !== "string") continue;
+      const start = original.indexOf(value);
+      textNode.nodeValue = original.slice(0, start) + dict[key] + original.slice(start + value.length);
+    }
+  }
+
   // Update HTML lang attribute
   document.documentElement.lang = currentLanguage;
 
   // Update Page Title if configured
-  if (currentLanguage === "hi") {
+  const pagePath = window.location.pathname.toLowerCase();
+  let pageKey = "home";
+  if (pagePath.includes("about")) pageKey = "about";
+  else if (pagePath.includes("darshan")) pageKey = "darshan";
+  else if (pagePath.includes("festivals")) pageKey = "festivals";
+  else if (pagePath.includes("gallery")) pageKey = "gallery";
+  else if (pagePath.includes("donations")) pageKey = "donations";
+  else if (pagePath.includes("contact")) pageKey = "contact";
+
+  if (dict[`pageTitles.${pageKey}`]) {
+    document.title = dict[`pageTitles.${pageKey}`];
+  } else if (currentLanguage === "hi") {
     document.title = "आदि शक्ति माँ वैष्णो भवतारिणी मंदिर | टिटवाला, महाराष्ट्र";
   } else if (currentLanguage === "mr") {
     document.title = "आदि शक्ति माँ वैष्णो भवतारिणी मंदिर | टिटवाळा, महाराष्ट्र";
@@ -896,6 +1196,7 @@ function initLiveDarshan() {
 
   // Handle active stream vs offline graceful card
   if (hasActiveStream && videoId && videoId.trim() !== "") {
+    container.classList.remove("is-offline");
     // Embed live YouTube player
     container.innerHTML = `
       <iframe 
@@ -910,6 +1211,7 @@ function initLiveDarshan() {
       streamStatusText.textContent = "Live Stream Active";
     }
   } else {
+    container.classList.add("is-offline");
     // Render devotional offline schedule card
     const dict = loadedTranslations[currentLanguage] || FALLBACK_TRANSLATIONS[currentLanguage] || FALLBACK_TRANSLATIONS["en"];
     container.innerHTML = `
@@ -940,53 +1242,146 @@ function initLiveDarshan() {
 }
 
 /* ==========================================================================
-   6. FESTIVALS & EVENTS SECTION
+   6. FESTIVALS & EVENTS SECTION (Loaded dynamically from events.json)
    ========================================================================== */
-function renderFestivals(filter = "all") {
-  const container = document.getElementById("events-grid-container");
-  if (!container) return;
+let eventsJsonLoaded = false;
+let eventsJsonPromise = null;
 
+async function loadEventsFromJson() {
+  if (eventsJsonLoaded) return;
+  if (!eventsJsonPromise) {
+    eventsJsonPromise = (async () => {
+      try {
+        // Primary event source: ./events.json, next to festivals.html.
+        const res = await fetch("./events.json");
+        if (res.ok) {
+          const data = await res.json();
+          if (data && Array.isArray(data.festivals) && data.festivals.length > 0) {
+            TEMPLE_CONFIG.festivals = data.festivals;
+          }
+        }
+      } catch (err) {
+        console.info("Using bundled festival events data (fallback).");
+      } finally {
+        eventsJsonLoaded = true;
+      }
+    })();
+    }
+  return eventsJsonPromise;
+}
+
+async function renderFestivals(filter = "all") {
+  // Paint the bundled fallback immediately, then repaint with events.json if available.
+  renderFestivalMarkup(filter);
+  await loadEventsFromJson();
+  renderFestivalMarkup(filter);
+}
+
+function renderFestivalMarkup(filter = "all") {
   const dict = loadedTranslations[currentLanguage] || FALLBACK_TRANSLATIONS[currentLanguage] || FALLBACK_TRANSLATIONS["en"];
   const list = TEMPLE_CONFIG.festivals;
+  const eventText = (event, field, legacyField) =>
+    dict[`festivalEvents.${event.id}.${field}`] || event[field] || event[legacyField] || "";
 
-  const filtered = filter === "all" ? list : list.filter(e => e.category === filter);
+  // Upcoming Events source: events with isUpcoming === true in the active data array above.
+  // The target element is #upcoming-events-container in festivals.html.
+  const upcomingContainer = document.getElementById("upcoming-events-container");
+  if (upcomingContainer) {
+    const upcomingList = list.filter(e => e.isUpcoming === true || e.upcoming === true);
+    const displayList = upcomingList;
 
-  container.innerHTML = filtered.map(ev => {
-    const name = currentLanguage === "hi" ? ev.nameHi : (currentLanguage === "mr" ? ev.nameMr : ev.nameEn);
-    const date = currentLanguage === "hi" ? ev.dateHi : (currentLanguage === "mr" ? ev.dateMr : ev.dateEn);
-    const timings = currentLanguage === "hi" ? ev.timingsHi : (currentLanguage === "mr" ? ev.timingsMr : ev.timingsEn);
-    const desc = currentLanguage === "hi" ? ev.descHi : (currentLanguage === "mr" ? ev.descMr : ev.descEn);
+    if (displayList.length === 0) {
+      upcomingContainer.innerHTML = '<p class="events-empty-state">New festival dates will be announced soon. Please check back or contact the Mandir office.</p>';
+      upcomingContainer.classList.add("is-empty");
+    } else {
+      upcomingContainer.classList.remove("is-empty");
+      upcomingContainer.innerHTML = displayList.map(ev => {
+    
+      const name = eventText(ev, "name", "nameEn") || ev.id;
+      const date = eventText(ev, "date", "dateEn");
+      const timings = eventText(ev, "timings", "timingsEn");
+      const desc = eventText(ev, "description", "descEn");
+      const badge = eventText(ev, "badge", "badge") || "Upcoming Event";
 
-    return `
-      <article class="event-card" data-category="${ev.category}">
-        <div class="event-image-box">
-          <img src="${ev.image}" alt="${name}" loading="lazy" onerror="this.onerror=null;this.src='./assets/images/temple-main.jpg';">
-          <span class="event-tag">${ev.category}</span>
-        </div>
-        <div class="event-body">
-          <h3 class="event-title">${name}</h3>
-          <div class="event-meta">
-            <div class="event-meta-item">
-              <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+      return `
+        <article class="upcoming-card">
+          <div class="upcoming-body">
+            <span class="upcoming-badge-pill">${badge}</span>
+            <h3 class="upcoming-title">${name}</h3>
+            <div class="upcoming-date-box">
+              <span>📅</span>
               <span>${date}</span>
             </div>
-            <div class="event-meta-item">
-              <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-              <span>${timings}</span>
+            <div class="upcoming-timings-row">
+              <span>⏰</span>
+              <span>${timings || "Schedule to be announced"}</span>
             </div>
+            <p class="upcoming-desc">${desc || "Details will be announced soon."}</p>
           </div>
-          <p class="event-desc">${desc}</p>
-          <button class="event-btn" onclick="openEventDetails('${ev.id}')">
-            <span>${dict["festivals.btnDetails"] || "View Details"}</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
-          </button>
-        </div>
-      </article>
-    `;
-  }).join("");
+        </article>
+      `;
+      }).join("");
+    }
+  }
+
+  // Festivals source: all entries in the same data array, filtered by category.
+  // The target element is #events-grid-container in festivals.html.
+  const container = document.getElementById("events-grid-container");
+  if (container) {
+    const filtered = filter === "all" ? list : list.filter(e => e.category === filter);
+
+    container.innerHTML = filtered.map(ev => {
+      const name = eventText(ev, "name", "nameEn") || ev.id;
+      const date = eventText(ev, "date", "dateEn");
+      const timings = eventText(ev, "timings", "timingsEn");
+      const desc = eventText(ev, "description", "descEn");
+
+      return `
+        <article class="event-card" data-category="${ev.category}">
+          <div class="event-image-box">
+            <img src="${ev.image || "./assets/images/temple-main.jpg"}" alt="${name}" loading="lazy" onerror="this.onerror=null;this.src='./assets/images/temple-main.jpg';">
+            <span class="event-tag">${ev.category}</span>
+          </div>
+          <div class="event-body">
+            <h3 class="event-title">${name}</h3>
+            <div class="event-meta">
+              <div class="event-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                <span>${date}</span>
+              </div>
+              <div class="event-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>${timings}</span>
+              </div>
+            </div>
+            <p class="event-desc">${desc}</p>
+          </div>
+        </article>
+      `;
+    }).join("");
+  }
 }
 
 function initFestivalTabs() {
+  const viewTabs = document.querySelectorAll(".festival-view-tab");
+  const viewPanels = document.querySelectorAll(".festival-view-panel");
+  viewTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      const selectedView = tab.dataset.view;
+      viewTabs.forEach(item => {
+        const selected = item === tab;
+        item.classList.toggle("active", selected);
+        item.setAttribute("aria-selected", selected ? "true" : "false");
+        item.setAttribute("tabindex", selected ? "0" : "-1");
+      });
+      viewPanels.forEach(panel => {
+        const selected = panel.id === (selectedView === "upcoming" ? "upcoming-events-section" : "festivals");
+        panel.hidden = !selected;
+        panel.classList.toggle("active", selected);
+      });
+    });
+  });
+
   const tabs = document.querySelectorAll(".festival-filter-tab");
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
@@ -1005,10 +1400,12 @@ window.openEventDetails = function(eventId) {
   const modalBody = document.getElementById("event-modal-content");
   if (!modal || !modalBody) return;
 
-  const name = currentLanguage === "hi" ? ev.nameHi : (currentLanguage === "mr" ? ev.nameMr : ev.nameEn);
-  const date = currentLanguage === "hi" ? ev.dateHi : (currentLanguage === "mr" ? ev.dateMr : ev.dateEn);
-  const timings = currentLanguage === "hi" ? ev.timingsHi : (currentLanguage === "mr" ? ev.timingsMr : ev.timingsEn);
-  const desc = currentLanguage === "hi" ? ev.descHi : (currentLanguage === "mr" ? ev.descMr : ev.descEn);
+  const dict = loadedTranslations[currentLanguage] || FALLBACK_TRANSLATIONS[currentLanguage] || FALLBACK_TRANSLATIONS.en;
+  const text = field => dict[`festivalEvents.${eventId}.${field}`] || "";
+  const name = text("name");
+  const date = text("date");
+  const timings = text("timings");
+  const desc = text("description");
 
   modalBody.innerHTML = `
     <div style="border-radius: 12px; overflow: hidden; margin-bottom: 20px; aspect-ratio: 16/9; background: #380710;">
@@ -1218,9 +1615,19 @@ function updateGallerySlide(index, animate = true) {
     slideImg.alt = title;
   }
 
+  const categoryMap = {
+    darshan: { en: "Maa Darshan", hi: "माँ दर्शन", mr: "आई दर्शन" },
+    sanctum: { en: "Tridevi Sanctum", hi: "त्रिदेवी गर्भगृह", mr: "त्रिदेवी गर्भगृह" },
+    paduka: { en: "Charan Paduka", hi: "चरण पादुका", mr: "चरण पादुका" }
+  };
+  const catKey = (item.category || "darshan").toLowerCase();
+  const catLocalized = (categoryMap[catKey] && categoryMap[catKey][currentLanguage])
+    ? categoryMap[catKey][currentLanguage]
+    : (currentLanguage === "hi" ? "माँ दर्शन" : (currentLanguage === "mr" ? "आई दर्शन" : item.category));
+
   if (slideTitle) slideTitle.textContent = title;
   if (slideDesc) slideDesc.textContent = caption;
-  if (slideCat) slideCat.textContent = item.category;
+  if (slideCat) slideCat.textContent = catLocalized;
   if (slideCounter) slideCounter.textContent = `${index + 1} / ${list.length}`;
 
   // Update thumbnail active ring
@@ -1691,6 +2098,24 @@ function initNavigation() {
         navToggle.setAttribute("aria-expanded", "false");
       });
     });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (navMenu.classList.contains("open") && !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        navMenu.classList.remove("open");
+        navToggle.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Close menu when pressing Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navMenu.classList.contains("open")) {
+        navMenu.classList.remove("open");
+        navToggle.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
   }
 
   // Header scroll appearance & Back to top button
@@ -1723,15 +2148,16 @@ function initNavigation() {
 
   // Active section scroll spy
   const sections = document.querySelectorAll("section[id]");
-  if ("IntersectionObserver" in window) {
+  if (sections.length > 0 && "IntersectionObserver" in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute("id");
           navLinks.forEach(link => {
-            if (link.getAttribute("href") === `#${id}`) {
+            const href = link.getAttribute("href") || "";
+            if (href === `#${id}` || href.endsWith(`#${id}`)) {
               link.classList.add("active");
-            } else {
+            } else if (href.startsWith("#")) {
               link.classList.remove("active");
             }
           });
@@ -1740,6 +2166,23 @@ function initNavigation() {
     }, { rootMargin: "-20% 0px -70% 0px" });
 
     sections.forEach(sec => observer.observe(sec));
+  }
+
+  // Fade-up scroll animations
+  const fadeElements = document.querySelectorAll(".animate-fade-up");
+  if (fadeElements.length > 0 && "IntersectionObserver" in window) {
+    const fadeObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+
+    fadeElements.forEach(el => fadeObserver.observe(el));
+  } else {
+    fadeElements.forEach(el => el.classList.add("visible"));
   }
 }
 

@@ -1,0 +1,6 @@
+# robots.txt for Adi Shakti Maa Vaishno Bhavtarni Mandir
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://maavaishnobhavtarni.org/sitemap.xml

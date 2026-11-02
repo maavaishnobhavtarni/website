@@ -1,0 +1,148 @@
+{
+  "updatedAt": "2026-10-30",
+  "festivals": [
+    {
+      "id": "kartik-purnima-deepotsav",
+      "category": "pujas",
+      "isUpcoming": true,
+      "image": "./assets/images/temple-interior.jpg",
+      "name": "Kartik Purnima Mahapooja & 1008 Deepotsav",
+      "badge": "Upcoming Grand Deepotsav",
+      "date": "Kartik Shukla Purnima (Dev Diwali 2026)",
+      "timings": "6:00 PM – 10:30 PM (Maha Deepotsav at 7:00 PM)",
+      "description": "Auspicious Dev Diwali celebrations featuring special Shringar of Maa Vaishno Bhavtarni, 1008 pure cow ghee earthen lamps illumination, Maha Aarti, and distribution of Kheer Prasad."
+    },
+    {
+      "id": "divya-mata-ki-chowki",
+      "category": "chowki",
+      "isUpcoming": true,
+      "image": "./assets/images/maa-darshan.jpg",
+      "name": "Divya Mata Ki Chowki & Akhand Bhajan Sandhya",
+      "badge": "Special Chowki",
+      "date": "Upcoming Saturday Evening",
+      "timings": "7:30 PM – 11:30 PM",
+      "description": "Soul-stirring devotional bhajans by renowned bhajan mandalis, Akhand Jyot Darshan, floral offerings at Maa's lotus feet, Ardaas prayer, and 56 Bhog Mahaprasad."
+    },
+    {
+      "id": "magh-gupt-navratri",
+      "category": "navratri",
+      "isUpcoming": true,
+      "image": "./assets/images/gallery/gallery-3.jpg",
+      "name": "Magha Gupt Navratri Mahotsav",
+      "badge": "Sadhana Utsav",
+      "date": "Magha Shukla Pratipada – Navami",
+      "timings": "7:00 AM – 10:00 PM Daily",
+      "description": "Sacred period for internal spiritual sadhana, Durga Saptashati parayan, Hawan, and special evening aartis seeking divine protection and strength."
+    },
+    {
+      "id": "maha-shivratri",
+      "category": "pujas",
+      "isUpcoming": true,
+      "image": "./assets/images/temple-interior.jpg",
+      "name": "Maha Shivratri Mahotsav & Akhand Rudrabhishek",
+      "badge": "Maha Shivratri Parv",
+      "date": "Phalguna Krishna Chaturdashi",
+      "timings": "All-Night 4-Prahar Pujan (6:00 AM – Next Morning 6:00 AM)",
+      "description": "Auspicious Shiva-Shakti union celebration featuring continuous Vedic Rudrabhishek, 1008 Bilvapatra archana, milk & honey panchamrit abhishek, and devotional Shiv-Durga aarti."
+    },
+    {
+      "id": "temple-sthapna",
+      "category": "pujas",
+      "isUpcoming": true,
+      "image": "./assets/images/temple-main.jpg",
+      "name": "Annual Mandir Sthapna Diwas & Patotsav",
+      "badge": "Mandir Foundation Day",
+      "date": "Annual Foundation Anniversary",
+      "timings": "8:00 AM – 10:00 PM (Maha Bhandara at 1:00 PM)",
+      "description": "Commemorating the holy Pran Pratishtha of Adi Shakti Maa Vaishno Bhavtarni with 108 Kalash Pujan, Maha Yagya, Flag hoisting (Dhwajarohan), and Community Mahaprasad for all devotees."
+    },
+    {
+      "id": "hanuman-jayanti-sundarkand",
+      "category": "chowki",
+      "isUpcoming": true,
+      "image": "./assets/images/gallery/gallery-1.jpg",
+      "name": "Hanuman Jayanti & Sangeetmay Sundarkand Path",
+      "badge": "Sundarkand Mahotsav",
+      "date": "Chaitra Shukla Purnima (Hanuman Janmotsav)",
+      "timings": "4:30 PM – 9:30 PM (Maha Aarti at 8:00 PM)",
+      "description": "Celebration of Shri Hanuman Janmotsav with musical recitation of Shri Sundarkand, sacred Sindoor chola offering, 108 Hanuman Chalisa chanting, and Boondi Mahaprasad distribution."
+    },
+    {
+      "id": "chaitra-navratri",
+      "category": "navratri",
+      "isUpcoming": true,
+      "image": "./assets/images/maa-darshan.jpg",
+      "name": "Chaitra Navratri Mahotsav & Ram Navami",
+      "badge": "Vasant Navratri",
+      "date": "Chaitra Shukla Pratipada – Navami (Spring)",
+      "timings": "7:00 AM – 11:00 PM Extended Darshan",
+      "description": "Nine sacred days of devotion featuring Ghatasthapana, Akhand Jyot, daily Chandi Path, special floral shringar of Maa Bhavtarni, and grand Kanya Pujan on Ram Navami."
+    },
+    {
+      "id": "weekly-sankirtan",
+      "category": "chowki",
+      "isUpcoming": true,
+      "image": "./assets/images/gallery/gallery-2.jpg",
+      "name": "Weekly Tuesday & Saturday Maa Ki Aarti & Kirtan",
+      "badge": "Regular Devotional Seva",
+      "date": "Every Tuesday & Saturday Evening",
+      "timings": "7:00 PM – 8:30 PM",
+      "description": "Weekly community devotional gathering where devotees join in traditional dholak, chimta, and harmonium accompanied bhajan kirtan followed by Halwa and Chana prasad."
+    },
+    {
+      "id": "vasant-panchami",
+      "category": "pujas",
+      "isUpcoming": false,
+      "image": "./assets/images/gallery/gallery-1.jpg",
+      "name": "Vasant Panchami & Saraswati Devi Avahan",
+      "badge": "Saraswati Aradhana",
+      "date": "Magha Shukla Panchami (Spring Arrival)",
+      "timings": "7:30 AM – 1:00 PM & 4:30 PM – 8:30 PM",
+      "description": "Welcoming the auspicious spring season with yellow floral shringar of Maa Vaishno, Saraswati Pujan, book and pen blessings for students, and sweet saffron Kesari prasad."
+    },
+    {
+      "id": "guru-purnima-paduka",
+      "category": "pujas",
+      "isUpcoming": false,
+      "image": "./assets/images/gallery/gallery-2.jpg",
+      "name": "Guru Purnima & Sacred Charan Paduka Archana",
+      "badge": "Charan Paduka Seva",
+      "date": "Ashadha Shukla Purnima (Guru Purnima)",
+      "timings": "8:00 AM – 1:00 PM & 5:00 PM – 9:00 PM",
+      "description": "Special day of gratitude dedicated to the divine lineage and Charan Paduka worship. Devotees offer Panchamrit snan, sandalwood paste, and fragrant flower garlands at Maa's holy lotus feet."
+    },
+    {
+      "id": "sharad-purnima-kheer",
+      "category": "chowki",
+      "isUpcoming": false,
+      "image": "./assets/images/temple-interior.jpg",
+      "name": "Kojagiri (Sharad) Purnima Amrit Kheer Utsav",
+      "badge": "Kojagiri Amrit Utsav",
+      "date": "Ashwin Shukla Purnima (Midnight Full Moon)",
+      "timings": "7:00 PM – 12:30 AM Midnight",
+      "description": "Sacred Kojagiri night celebrations with moonlight bhajan sandhya, Lakshmi-Vaishno pujan, and distribution of saffron-cardamom Amrit Kheer kept under the nectar-raining full moon."
+    },
+    {
+      "id": "sharad-navratri",
+      "category": "navratri",
+      "isUpcoming": false,
+      "image": "./assets/images/temple-main.jpg",
+      "name": "Sharad Navratri Mahotsav",
+      "badge": "Sharad Utsav",
+      "date": "Ashwin Shukla Pratipada – Navami (Autumn)",
+      "timings": "7:00 AM – 11:00 PM Extended Hours",
+      "description": "The most magnificent autumn festival at the temple with 9 days of royal poshak shringar, Tridevi Mahapooja, Dandiya Raas, and thousands of devotees seeking Maa's blessings."
+    },
+    {
+      "id": "vijayadashami",
+      "category": "navratri",
+      "isUpcoming": false,
+      "image": "./assets/images/maa-darshan.jpg",
+      "name": "Vijayadashami / Dussehra Utsav",
+      "badge": "Victory of Dharma",
+      "date": "Ashwin Shukla Dashami",
+      "timings": "Special Darshan: 7:00 AM – 10:30 PM",
+      "description": "Commemorating the victory of Maa Durga over Mahishasura and righteousness over unrighteousness. Featuring Shastra Pujan, Aparajita Pujan, and distribution of holy Prasad."
+    }
+  ]
+}
